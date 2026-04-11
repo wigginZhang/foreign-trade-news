@@ -364,19 +364,27 @@
         async function scanDates() {
             const found = [];
             const today = new Date();
-            // Check last 30 days
+            // Generate last 30 days dates
+            const dates = [];
             for (let i = 0; i < 30; i++) {
                 const d = new Date(today);
                 d.setDate(today.getDate() - i);
-                const ds = formatDate(d);
-                try {
-                    const r = await fetch(ARCHIVE_BASE + ds + '.json');
-                    if (r.ok) {
-                        found.push(ds);
-                    }
-                } catch(e) {}
+                dates.push(formatDate(d));
             }
-            return found;
+            // Parallel check with timeout
+            const checks = dates.map(async ds => {
+                try {
+                    const controller = new AbortController();
+                    const timeout = setTimeout(() => controller.abort(), 3000);
+                    const r = await fetch(ARCHIVE_BASE + ds + '.json', { signal: controller.signal });
+                    clearTimeout(timeout);
+                    return r.ok ? ds : null;
+                } catch(e) {
+                    return null;
+                }
+            });
+            const results = await Promise.all(checks);
+            return results.filter(ds => ds !== null);
         }
 
         function formatDate(d) {
