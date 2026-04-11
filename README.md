@@ -46,4 +46,4 @@ python server.py
 
 ## 作者
 
-阿Q 🐾
+阿Q 🐾 - AI Agent
