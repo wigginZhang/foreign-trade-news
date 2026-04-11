@@ -60,53 +60,91 @@
 
         /* ── Sidebar ── */
         .sidebar {
-            width: 180px;
+            width: 220px;
             background: var(--sidebar-bg);
             border-right: 1px solid var(--border);
             overflow-y: auto;
             flex-shrink: 0;
+            padding: 16px;
         }
 
         .sidebar-title {
-            padding: 14px 16px 10px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 12px;
         }
 
-        .date-item {
-            padding: 12px 16px;
+        /* ── Date Picker ── */
+        .date-picker {
+            background: var(--card);
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 16px;
+        }
+
+        .date-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             cursor: pointer;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.15s;
-            border-left: 3px solid transparent;
+            transition: border-color 0.15s;
         }
 
-        .date-item:hover {
-            background: #f8fafc;
+        .date-input-wrapper:hover {
+            border-color: var(--accent);
         }
 
-        .date-item.active {
-            background: var(--active-bg);
-            border-left-color: var(--active-border);
-        }
-
-        .date-item .date-main {
+        .date-input-wrapper input[type="date"] {
+            border: none;
+            background: transparent;
             font-size: 14px;
-            font-weight: 600;
             color: var(--text);
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            flex: 1;
         }
 
-        .date-item .date-sub {
-            font-size: 11px;
+        .date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .date-display {
+            font-size: 13px;
             color: var(--text-dim);
-            margin-top: 2px;
+            margin-top: 8px;
+            padding: 0 4px;
         }
 
-        .date-item.active .date-main {
+        .quick-dates {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .quick-date-btn {
+            font-size: 11px;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            background: #f8fafc;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .quick-date-btn:hover {
+            background: var(--active-bg);
+            border-color: var(--accent);
             color: var(--accent);
         }
 
@@ -297,30 +335,48 @@
 
         /* Responsive */
         @media (max-width: 640px) {
-            .sidebar { width: 120px; }
+            .sidebar { width: 100%; padding: 12px; }
             .main { padding: 14px; }
             .stats-bar { gap: 8px; }
             .stat { padding: 10px 12px; }
             .stat-value { font-size: 20px; }
+            .layout { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>🐾 外贸新闻档案</h1>
-        <div class="header-sub" id="headerSub">加载中...</div>
+        <div class="header-sub" id="headerSub">选择日期查看播报</div>
     </header>
 
     <div class="layout">
-        <!-- Sidebar: date list -->
+        <!-- Sidebar: date picker -->
         <aside class="sidebar">
-            <div class="sidebar-title">📅 播报日期</div>
-            <div id="dateList"><div style="padding:16px;font-size:12px;color:#94a3b8">加载中...</div></div>
+            <div class="sidebar-title">📅 选择日期</div>
+            
+            <div class="date-picker">
+                <div class="date-input-wrapper">
+                    <span>📆</span>
+                    <input type="date" id="dateInput" max="">
+                </div>
+                <div class="date-display" id="dateDisplay">请选择日期</div>
+                
+                <div class="quick-dates">
+                    <button class="quick-date-btn" onclick="loadToday()">今天</button>
+                    <button class="quick-date-btn" onclick="loadYesterday()">昨天</button>
+                    <button class="quick-date-btn" onclick="loadDaysAgo(2)">前天</button>
+                    <button class="quick-date-btn" onclick="loadDaysAgo(7)">7天前</button>
+                </div>
+            </div>
         </aside>
 
         <!-- Main: news content -->
         <main class="main" id="mainContent">
-            <div class="loading">📰 正在加载...</div>
+            <div class="empty">
+                <div class="empty-icon">📅</div>
+                <p>请选择日期查看新闻播报</p>
+            </div>
         </main>
     </div>
 
@@ -341,50 +397,23 @@
         const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
 
         // ── State ──
-        let availableDates = [];
         let currentDate = null;
 
         // ── Init ──
-        async function init() {
-            // Scan for available archive files by trying recent dates
-            availableDates = await scanDates();
-            renderSidebar();
-            if (availableDates.length > 0) {
-                loadDate(availableDates[0]);
-            } else {
-                document.getElementById('mainContent').innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">📭</div>
-                        <p>暂无播报档案</p>
-                        <p style="font-size:12px;margin-top:8px;">定时任务每天09:20自动生成</p>
-                    </div>`;
-            }
-        }
-
-        async function scanDates() {
-            const found = [];
-            const today = new Date();
-            // Generate last 30 days dates
-            const dates = [];
-            for (let i = 0; i < 30; i++) {
-                const d = new Date(today);
-                d.setDate(today.getDate() - i);
-                dates.push(formatDate(d));
-            }
-            // Parallel check with timeout
-            const checks = dates.map(async ds => {
-                try {
-                    const controller = new AbortController();
-                    const timeout = setTimeout(() => controller.abort(), 3000);
-                    const r = await fetch(ARCHIVE_BASE + ds + '.json', { signal: controller.signal });
-                    clearTimeout(timeout);
-                    return r.ok ? ds : null;
-                } catch(e) {
-                    return null;
+        function init() {
+            // Set max date to today
+            const today = formatDate(new Date());
+            document.getElementById('dateInput').max = today;
+            
+            // Bind date input change
+            document.getElementById('dateInput').addEventListener('change', (e) => {
+                if (e.target.value) {
+                    loadDate(e.target.value);
                 }
             });
-            const results = await Promise.all(checks);
-            return results.filter(ds => ds !== null);
+            
+            // Auto load today
+            loadToday();
         }
 
         function formatDate(d) {
@@ -402,37 +431,49 @@
             return { main: `${m}月${day}日`, sub: wd };
         }
 
-        // ── Sidebar ──
-        function renderSidebar() {
-            const list = document.getElementById('dateList');
-            if (availableDates.length === 0) {
-                list.innerHTML = '<div style="padding:16px;font-size:12px;color:#94a3b8">暂无档案</div>';
-                return;
-            }
-            list.innerHTML = availableDates.map(ds => {
-                const { main, sub } = friendlyDate(ds);
-                return `<div class="date-item" data-date="${ds}" onclick="loadDate('${ds}')">
-                    <div class="date-main">${main}</div>
-                    <div class="date-sub">${sub}</div>
-                </div>`;
-            }).join('');
+        // ── Quick Date Loaders ──
+        function loadToday() {
+            const today = formatDate(new Date());
+            document.getElementById('dateInput').value = today;
+            loadDate(today);
         }
 
-        function setActiveDate(ds) {
-            document.querySelectorAll('.date-item').forEach(el => {
-                el.classList.toggle('active', el.dataset.date === ds);
-            });
+        function loadYesterday() {
+            const d = new Date();
+            d.setDate(d.getDate() - 1);
+            const ds = formatDate(d);
+            document.getElementById('dateInput').value = ds;
+            loadDate(ds);
+        }
+
+        function loadDaysAgo(n) {
+            const d = new Date();
+            d.setDate(d.getDate() - n);
+            const ds = formatDate(d);
+            document.getElementById('dateInput').value = ds;
+            loadDate(ds);
         }
 
         // ── Load & Render ──
         async function loadDate(ds) {
             currentDate = ds;
-            setActiveDate(ds);
+            const { main, sub } = friendlyDate(ds);
+            document.getElementById('dateDisplay').textContent = `${ds}（${sub}）`;
             document.getElementById('mainContent').innerHTML = '<div class="loading">📰 加载中...</div>';
 
             try {
                 const r = await fetch(ARCHIVE_BASE + ds + '.json');
-                if (!r.ok) throw new Error('not found');
+                if (!r.ok) {
+                    // No data for this date
+                    document.getElementById('mainContent').innerHTML = `
+                        <div class="empty">
+                            <div class="empty-icon">📭</div>
+                            <p>暂无 ${ds} 的播报数据</p>
+                            <p style="font-size:12px;margin-top:8px;">定时任务每天09:20自动生成</p>
+                        </div>`;
+                    document.getElementById('headerSub').textContent = `${ds} · 暂无数据`;
+                    return;
+                }
                 const data = await r.json();
                 renderContent(data);
             } catch(e) {
@@ -440,7 +481,9 @@
                     <div class="empty">
                         <div class="empty-icon">⚠️</div>
                         <p>数据加载失败</p>
+                        <p style="font-size:12px;margin-top:8px;">请检查网络连接</p>
                     </div>`;
+                document.getElementById('headerSub').textContent = '加载失败';
             }
         }
 
