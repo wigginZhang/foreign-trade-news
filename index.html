@@ -370,8 +370,10 @@
                 d.setDate(today.getDate() - i);
                 const ds = formatDate(d);
                 try {
-                    const r = await fetch(ARCHIVE_BASE + ds + '.json', { method: 'HEAD' });
-                    if (r.ok) found.push(ds);
+                    const r = await fetch(ARCHIVE_BASE + ds + '.json');
+                    if (r.ok) {
+                        found.push(ds);
+                    }
                 } catch(e) {}
             }
             return found;
