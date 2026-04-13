@@ -1,114 +1,150 @@
 {
+    "dateShort":  "2026-04-13",
+    "generatedAt":  "16:21",
+    "source":  "v4-multi-source",
+    "broadcast":  "",
     "sections":  [
                      {
-                         "title":  "关税政策",
+                         "id":  "tariff",
+                         "title":  "Tariff Policy",
                          "news":  [
                                       {
-                                          "source":  "mightyshipping.com",
-                                          "snippet":  "自2026年4月1日起，中国取消249类商品出口增值税退税，涵盖化工品、太阳能电池、陶瓷、玻璃等。22类电池产品退税率从9%降至6%，2027年起归零。",
-                                          "keyFacts":  [
-                                                           "陶瓷砖主产区佛山、潮州、淄博受冲击最大",
-                                                           "锂电池供应链出口成本直接上升",
-                                                           "电池出口商需建立两阶段成本模型"
-                                                       ],
-                                          "impact":  "high",
+                                          "id":  "20260413-86ef8d",
                                           "title":  "China\u0027s April 2026 Export VAT Rebate Cuts Are Now in Force",
-                                          "url":  "https://www.mightyshipping.com/en/blog/2026-02-26-china-cancels-export-tax-rebates-271-products"
+                                          "source":  "mightyshipping.com",
+                                          "category":  "tariff",
+                                          "impact":  "high",
+                                          "snippet":  "# China Cancels Export VAT Rebates on 271 Products from April 2026. ## 249 Products Lose Rebates Overnight, 22 Battery Items Phased Out â the Export Window Is Closing Fast. **Summary:** Effective April 1, 2026, China will cancel VAT export rebates on 249 product categories spanning chemicals, solar cells, ceramics, glass, stone, and building materials. Separately, 22 battery product categories will see their rebate rate cut from 9% to 6% on the same date, then reduced to zero from January 1, 2027. These are critical raw materials for power and energy storage batteries, and the rebate cancellation will directly raise export costs across the entire lithium battery supply chain. * **Building ceramics:** ceramic tiles, floor tiles, mosaics (69072110â69074090) â China is the world\u0027s largest ceramic tile exporter; the rebate cancellation will significantly affect major production hubs such as Foshan, Chaozhou, and Zibo. * **Plan for the battery phase-out:** Battery exporters need a two-phase costing model â 6% rebate from April to December 2026, then zero from 2027.",
+                                          "url":  "https://www.mightyshipping.com/en/blog/2026-02-26-china-cancels-export-tax-rebates-271-products",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
                                       },
                                       {
-                                          "source":  "couleenergy.com",
-                                          "snippet":  "中国取消光伏产品出口退税，行业预测组件价格全年涨幅10-15%，从.086/W升至.098/W。",
-                                          "keyFacts":  [
-                                                           "欧洲合同已加入退税取消条款",
-                                                           "美国市场叠加232调查成本涨幅更大",
-                                                           "2025年美国组件价格已涨14%"
-                                                       ],
-                                          "impact":  "high",
-                                          "title":  "China Cancels PV Module Export Tax Rebates April 2026",
-                                          "url":  "https://couleenergy.com/china-cancels-solar-module-export-tax-rebates-2026-solar-projects/"
-                                      }
-                                  ],
-                         "id":  "tariff"
-                     },
-                     {
-                         "title":  "贸易数据",
-                         "news":  [
-                                      {
-                                          "source":  "english.www.gov.cn",
-                                          "snippet":  "2026年1-2月中国外贸总值7.73万亿元，同比增长18.3%，出口+19.2%，进口+17.1%。",
-                                          "keyFacts":  [
-                                                           "东盟贸易额超1.24万亿元，同比+20.3%",
-                                                           "中欧贸易额9989亿元，同比+19.9%",
-                                                           "中美贸易额6097亿元，同比-16.9%"
-                                                       ],
+                                          "id":  "20260413-42b4ec",
+                                          "title":  "China Export Tax Rebate Changes 2026: Complete Supply Chain ...",
+                                          "source":  "sekologistics.com",
+                                          "category":  "tariff",
                                           "impact":  "medium",
-                                          "title":  "China\u0027s foreign trade records strong start to 2026 with double-digit growth",
-                                          "url":  "https://english.www.gov.cn/archive/statistics/202603/10/content_WS69afb2c2c6d00ca5f9a09c60.html"
+                                          "snippet":  "Effective April 1, 2026, China will eliminate or reduce VAT export rebates for PV products, batteries, glass, and chemicals. Prepare your supply chain for",
+                                          "url":  "https://www.sekologistics.com/en/resource-hub/news/china-export-tax-rebate-changes-2026-complete-supply-chain-planning-guide-for-importers-and-exporters/",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
                                       }
-                                  ],
-                         "id":  "data"
+                                  ]
                      },
                      {
-                         "title":  "地缘贸易",
+                         "id":  "data",
+                         "title":  "Trade Data",
                          "news":  [
                                       {
-                                          "source":  "chinausfocus.com",
-                                          "snippet":  "美国对华综合关税37.3%，2025年1-11月中国对美出口同比下降18.9%，较历史高点低28%。",
-                                          "keyFacts":  [
-                                                           "日内瓦谈判将91%升级关税降回30%",
-                                                           "美国对华出口同期下降13.2%",
-                                                           "中国加速推进贸易多元化"
-                                                       ],
-                                          "impact":  "high",
-                                          "title":  "China-U.S. Trade: Lessons for 2026",
-                                          "url":  "https://www.chinausfocus.com/finance-economy/china-us-trade-lessons-for-2026"
-                                      }
-                                  ],
-                         "id":  "geo"
-                     },
-                     {
-                         "title":  "汇率动态",
-                         "news":  [
-                                      {
-                                          "source":  "exchange-rates.org",
-                                          "snippet":  "2026年美元兑人民币汇率在6.83-7.00区间波动，2月均值约6.91。",
-                                          "keyFacts":  [
-                                                           "2026年最高点1USD=6.9973CNY",
-                                                           "最低点1USD=6.8280CNY",
-                                                           "汇率相对稳定但存在波动风险"
-                                                       ],
+                                          "id":  "20260413-2a50a1",
+                                          "title":  "Preliminary Release - China Customs",
+                                          "source":  "english.customs.gov.cn",
+                                          "category":  "data",
                                           "impact":  "medium",
-                                          "title":  "USD to CNY Exchange Rate History for 2026",
-                                          "url":  "https://www.exchange-rates.org/exchange-rate-history/usd-cny-2026"
+                                          "snippet":  "Statistics. Due to data verification after the preliminary release, the monthly bulletin is of more accuracy. Year. 2026, 2025, 2024, 2023, 2022, 2021, 2020",
+                                          "url":  "http://english.customs.gov.cn/statics/report/preliminary.html",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
+                                      },
+                                      {
+                                          "id":  "20260413-3053ce",
+                                          "title":  "Trade in Goods with China Available years: 2026 | 2025 | 2024 | 2023",
+                                          "source":  "census.gov",
+                                          "category":  "data",
+                                          "impact":  "medium",
+                                          "snippet":  "[](https://www.census.gov/foreign-trade/balance/c5700.html). [end of header](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [Skip to looking for section](https://www.census.gov/foreign-trade/balance/c5700.html#skipsideNav). *   [Main](https://www.census.gov/foreign-trade/index.html). *   [About](https://www.census.gov/foreign-trade/about/index.html). *   [Data](https://www.census.gov/foreign-trade/data/index.html). *   [Export Filing AES](https://www.census.gov/foreign-trade/aes/index.html). *   [Regulations](https://www.census.gov/foreign-trade/regulations/index.html). *   [Outreach](https://www.census.gov/foreign-trade/outreach/index.html). *   [Schedule B](https://www.census.gov/foreign-trade/schedules/b/index.html). *   [Reference](https://www.census.gov/foreign-trade/reference/). *   [Guide to International Trade](https://www.census.gov/foreign-trade/guide/index.html). *   [Events](https://www.census.gov/foreign-trade/aes/upcoming-outreach-activities.html). *   [Release Schedule](https://www.census.gov/foreign-trade/schedule.html). *   [Definitions](https://www.census.gov/foreign-trade/reference/definitions/index.html). *   [Contact Us](https://www.census.gov/foreign-trade/contact.html). *   [Main](https://www.census.gov/foreign-trade/index.html). *   [About](https://www.census.gov/foreign-trade/about/index.html). *   [Data](https://www.census.gov/foreign-trade/data/index.html). *   [Export Filing AES](https://www.census.gov/foreign-trade/aes/index.html). *   [Regulations](https://www.census.gov/foreign-trade/regulations/index.html). *   [Outreach](https://www.census.gov/foreign-trade/outreach/index.html). *   [Schedule B](https://www.census.gov/foreign-trade/schedules/b/index.html). *   [Reference](https://www.census.gov/foreign-trade/reference/). *   [Guide to International Trade](https://www.census.gov/foreign-trade/guide/index.html). *   [Events](https://www.census.gov/foreign-trade/aes/upcoming-outreach-activities.html). *   [Release Schedule](https://www.census.gov/foreign-trade/schedule.html). *   [Definitions](https://www.census.gov/foreign-trade/reference/definitions/index.html). *   [Contact Us](https://www.census.gov/foreign-trade/contact.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). *   [Notes](https://www.census.gov/foreign-trade/balance/c5700.html#questions). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). DOWNLOAD: [Download the full dataset for all countries[EXCEL - 5 MB]](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). ## [](https://www.census.gov/foreign-trade/balance/c5700.html)Additional Information. *   For information on data sources and methodology, check out the [Information on the Collection and Publication of Trade Statistics](https://www.census.gov/foreign-trade/balance/c5700.html).",
+                                          "url":  "https://www.census.gov/foreign-trade/balance/c5700.html",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
                                       }
-                                  ],
-                         "id":  "fx"
+                                  ]
                      },
                      {
-                         "title":  "物流运输",
+                         "id":  "geo",
+                         "title":  "Geo Trade",
                          "news":  [
                                       {
-                                          "source":  "facebook.com",
-                                          "snippet":  "3月运费：上海-洛杉矶约,191/FEU，上海-纽约约,771/FEU，运费较高峰期回落。",
-                                          "keyFacts":  [
-                                                           "海运运费趋于正常化",
-                                                           "空运标准时效7-12天",
-                                                           "LCL散货约-600不含关税"
-                                                       ],
+                                          "id":  "20260413-95b539",
+                                          "title":  "China opposes all forms of unilateral tariff measures - CGTN",
+                                          "source":  "news.cgtn.com",
+                                          "category":  "geo",
                                           "impact":  "medium",
-                                          "title":  "China shipping update for March 2026",
-                                          "url":  "https://www.facebook.com/groups/577984106139176/posts/1980555852548654/"
+                                          "snippet":  "China has consistently opposed all forms of unilateral tariff measures and urged the United States to revoke its existing unilateral tariffs",
+                                          "url":  "https://news.cgtn.com/news/2026-02-24/China-urges-U-S-to-halt-further-unilateral-tariff-measures-1L1DZbPOnEQ/p.html",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
+                                      },
+                                      {
+                                          "id":  "20260413-1b0396",
+                                          "title":  "MOFCOM Spokesperson\u0027s Remarks on Recent U.S. Tariff Adjustment",
+                                          "source":  "english.mofcom.gov.cn",
+                                          "category":  "geo",
+                                          "impact":  "medium",
+                                          "snippet":  "China has consistently opposed all forms of unilateral tariff measures. It urges the U.S. to remove such unilateral tariffs and refrain from new ones. It",
+                                          "url":  "https://english.mofcom.gov.cn/News/SpokesmansRemarks/art/2026/art_0b3b19498a844cd0bdb4ca0deb281a9d.html",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
                                       }
-                                  ],
-                         "id":  "logistics"
+                                  ]
+                     },
+                     {
+                         "id":  "fx",
+                         "title":  "FX Rate",
+                         "news":  [
+                                      {
+                                          "id":  "20260413-faa478",
+                                          "title":  "Yuan expected to rise in 2026, but Beijing has its reasons ...",
+                                          "source":  "reuters.com",
+                                          "category":  "fx",
+                                          "impact":  "medium",
+                                          "snippet":  "Booming exports are pushing up China\u0027s currency and while analysts think authorities will resist further gains, risks are to the upside and",
+                                          "url":  "https://www.reuters.com/business/finance/yuan-expected-rise-2026-beijing-has-its-reasons-saying-not-so-fast-2026-02-03/",
+                                          "freshness":  2,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
+                                      }
+                                  ]
+                     },
+                     {
+                         "id":  "logistics",
+                         "title":  "Logistics",
+                         "news":  [
+                                      {
+                                          "id":  "20260413-2edfdc",
+                                          "title":  "Asia-Europe enters 2026 with seasonal firmness, structural ...",
+                                          "source":  "hellenicshippingnews.com",
+                                          "category":  "logistics",
+                                          "impact":  "medium",
+                                          "snippet":  "As of Jan. 9, Platts Container Rate 1 (PCR1) and PCR11 â North Asia to North Europe and the UK â were assessed at $2,700/FEU, extending gains",
+                                          "url":  "https://www.hellenicshippingnews.com/containers-quarterly-asia-europe-enters-2026-with-seasonal-firmness-structural-uncertainty/",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
+                                      },
+                                      {
+                                          "id":  "20260413-bdd5c1",
+                                          "title":  "International Shipping and Logistics Market Update Week ...",
+                                          "source":  "phaata.com",
+                                          "category":  "logistics",
+                                          "impact":  "medium",
+                                          "snippet":  "Ocean Freight rates from North Europe to Asia in Week 12/2026 continued to increase by 6.80% week-on-week, up to $157/FEU. This rate is up 12.14",
+                                          "url":  "https://phaata.com/en/logistics-market/international-shipping-and-logistics-market-update-week-12-2026-phaata-62090.html",
+                                          "freshness":  3,
+                                          "fromSource":  "tavily",
+                                          "timestamp":  "2026-04-13T16:20:49+08:00"
+                                      }
+                                  ]
                      }
                  ],
-    "dateShort":  "2026-04-13",
-    "source":  "cron",
-    "generatedAt":  "09:07",
-    "broadcast":  "🐾 阿Q·外贸新闻播报\n2026年4月13日（周一）· 今日要闻\n\n━━━━━━━━━━━━━━━━━━━━━━\n📋 关税政策\n━━━━━━━━━━━━━━━━━━━━━━\n\n① 中国4月起取消271类商品出口退税，已正式生效\n自2026年4月1日起，中国取消249类商品出口增值税退税，涵盖化工品、太阳能电池、陶瓷、玻璃、石材及建材等。同时，22类电池产品退税率从9%降至6%，并将于2027年1月1日起降为零。\n关键事实：\n- 佛山、潮州、淄博等主要陶瓷产区受冲击最大，中国是全球最大陶瓷砖出口国\n- 锂电池供应链出口成本将直接上升，电池出口商需建立两阶段成本模型\n- 2026年4月至12月适用6%退税，2027年起归零，需提前锁定合同价格\n\n② 中国取消光伏组件出口退税，全球太阳能市场重塑\n2026年1月9日宣布、4月1日起生效，中国取消光伏产品出口增值税退税。行业预测组件价格全年涨幅10-15%，从2025年底的$0.086/W升至2026年Q4的$0.098/W（+14%）。\n关键事实：\n- 欧洲合同已提前加入退税取消条款，买家需重新谈判价格\n- 美国市场叠加232调查、UFLPA合规成本，涨幅将更为显著\n- 2025年1月至11月美国组件价格已上涨14%，后续压力持续\n\n━━━━━━━━━━━━━━━━━━━━━━\n📊 贸易数据\n━━━━━━━━━━━━━━━━━━━━━━\n\n③ 2026年1-2月中国外贸同比增长18.3%，强势开局\n据海关总署数据，2026年前两月货物贸易总值达7.73万亿元（约1.12万亿美元），出口增长19.2%，进口增长17.1%。\n关键事实：\n- 东盟继续保持中国最大贸易伙伴地位，中国-东盟贸易额超1.24万亿元，同比+20.3%\n- 中欧贸易额9989亿元，同比+19.9%；中美贸易额6097亿元，同比-16.9%\n- \"一带一路\"沿线国家贸易额达4.02万亿元，同比+20%，多元化布局成效显现\n\n━━━━━━━━━━━━━━━━━━━━━━\n🌐 地缘贸易\n━━━━━━━━━━━━━━━━━━━━━━\n\n④ 中美贸易战2026年复盘：关税博弈与出口下滑\n美国对华综合关税维持在37.3%（含特朗普第一任期关税），是美国全球平均关税（17.3%）的两倍以上。2025年1-11月中国对美出口3859亿美元，同比下降18.9%，较三年前历史高点低28%。\n关键事实：\n- 日内瓦谈判（5月11日）将91%升级关税降回30%，但整体关税水平仍高企\n- 美国对华出口同期下降13.2%，双边贸易均受重创\n- 中国通过东盟、欧洲等多元化渠道对冲美国市场损失\n\n⑤ 中国贸易调整进入第二阶段，北京积极应对\n分析人士指出，中美贸易战进入第二阶段，北京已采取多项措施缓解冲击，包括扩大与非美市场的贸易往来及国内消费刺激政策。\n关键事实：\n- 中国正加速推进贸易多元化，减少对美依赖\n- 东南亚、中东、非洲市场成为重点开拓方向\n\n━━━━━━━━━━━━━━━━━━━━━━\n💱 汇率动态\n━━━━━━━━━━━━━━━━━━━━━━\n\n⑥ 人民币汇率：2026年区间震荡，当前约6.91\n2026年美元兑人民币汇率在6.83-7.00区间波动，2月均值约6.91。\n关键事实：\n- 2026年最高点：1美元=6.9973元；最低点：1美元=6.8280元\n- 汇率相对稳定，但贸易摩擦背景下仍存在波动风险\n- 出口商建议锁定远期汇率，规避汇兑损失\n\n━━━━━━━━━━━━━━━━━━━━━━\n🚢 物流运输\n━━━━━━━━━━━━━━━━━━━━━━\n\n⑦ 中美航线运费3月有所回落，供应链趋于稳定\n3月最新数据：上海-洛杉矶约$2,191/FEU，上海-纽约约$2,771/FEU，运费较高峰期明显回落。\n关键事实：\n- 海运运费趋于正常化，但仍高于2023年低点\n- 空运标准时效7-12天，加急5-8天，适合高价值货物\n- LCL散货海运约$400-600（不含美国关税及目的地配送）\n\n⑧ 2026年中国至美国海运全攻略：效率与利润最大化\n综合分析各类运输方式，提醒出口商关注总到岸成本，包括关税、保险、内陆运输及港口滞期费。\n关键事实：\n- 快速海运服务（Matson、ZIM等）可显著缩短美西港口运输时间\n- \"便宜\"的海运报价可能隐藏高额内陆运费，需核算总成本\n- 建议与综合物流伙伴合作，整合采购与物流降低风险\n\n━━━━━━━━━━━━━━━━━━━━━━\n📌 今日重点提示\n━━━━━━━━━━━━━━━━━━━━━━\n🔴 高优先级：出口退税取消已生效，陶瓷、光伏、电池出口商须立即重新核算报价\n🟡 关注：中美贸易额持续下滑，东盟/欧洲替代市场机会值得深挖\n🟢 参考：人民币汇率相对稳定，运费回落，短期物流成本压力减轻\n\n以上内容仅供参考，不构成投资建议。",
     "stats":  {
-                  "totalNews":  10,
+                  "totalNews":  9,
                   "sections":  5
               }
 }
