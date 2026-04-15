@@ -5,108 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外贸新闻档案</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN TOKENS — Apple Style
+           ═══════════════════════════════════════════════════════════ */
         :root {
-            --bg: #f0f2f5;
-            --sidebar-bg: #ffffff;
-            --card: #ffffff;
-            --text: #1a1a2e;
-            --text-dim: #64748b;
-            --accent: #2563eb;
-            --border: #e2e8f0;
-            --high: #dc2626;
-            --high-bg: #fef2f2;
-            --medium: #d97706;
-            --medium-bg: #fffbeb;
-            --active-bg: #eff6ff;
-            --active-border: #2563eb;
+            /* Colors */
+            --color-text-primary: #1D1D1F;
+            --color-text-secondary: #86868B;
+            --color-text-tertiary: #A1A1A6;
+            --color-accent: #0071E3;
+            --color-accent-hover: #0077ED;
+            --color-bg: #FFFFFF;
+            --color-bg-secondary: #F5F5F7;
+            --color-separator: #E5E5EA;
+            --color-high-impact: #FF3B30;
+            --color-medium-impact: #FF9500;
+            --color-low-impact: #86868B;
+
+            /* Typography */
+            --font-stack: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
+            
+            /* Spacing (8px base) */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+
+            /* Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 100px;
+
+            /* Shadows */
+            --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-elevated: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: var(--font-stack);
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
             line-height: 1.6;
             height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ── Header ── */
+        /* ═══════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════ */
         header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-            color: white;
-            padding: 18px 24px;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-separator);
+            padding: 0 var(--space-lg);
+            height: 56px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-shrink: 0;
         }
 
-        header h1 { font-size: 20px; }
+        .header-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--color-text-primary);
+        }
 
         .header-sub {
             font-size: 13px;
-            opacity: 0.85;
+            font-weight: 400;
+            color: var(--color-text-secondary);
         }
 
-        /* ── Layout ── */
+        /* ═══════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════ */
         .layout {
             display: flex;
             flex: 1;
             overflow: hidden;
         }
 
-        /* ── Sidebar ── */
+        /* ═══════════════════════════════════════════════════════════
+           SIDEBAR — Apple Style
+           ═══════════════════════════════════════════════════════════ */
         .sidebar {
-            width: 220px;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border);
+            width: 240px;
+            background: var(--color-bg-secondary);
+            border-right: 1px solid var(--color-separator);
             overflow-y: auto;
             flex-shrink: 0;
-            padding: 16px;
+            padding: var(--space-lg);
         }
 
         .sidebar-title {
             font-size: 12px;
-            font-weight: 700;
-            color: var(--text-dim);
+            font-weight: 600;
+            color: var(--color-text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            margin-bottom: var(--space-md);
         }
 
-        /* ── Date Picker ── */
+        /* Date Picker Card */
         .date-picker {
-            background: var(--card);
-            border-radius: 10px;
-            padding: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin-bottom: 16px;
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--space-lg);
         }
 
         .date-input-wrapper {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            gap: var(--space-sm);
+            padding: 12px 14px;
+            border: 1px solid var(--color-separator);
+            border-radius: var(--radius-md);
             cursor: pointer;
             transition: border-color 0.15s;
+            background: var(--color-bg);
         }
 
         .date-input-wrapper:hover {
-            border-color: var(--accent);
+            border-color: var(--color-accent);
         }
 
         .date-input-wrapper input[type="date"] {
             border: none;
             background: transparent;
-            font-size: 14px;
-            color: var(--text);
+            font-size: 15px;
             font-family: inherit;
+            color: var(--color-text-primary);
             cursor: pointer;
             outline: none;
             flex: 1;
@@ -119,164 +164,212 @@
 
         .date-display {
             font-size: 13px;
-            color: var(--text-dim);
-            margin-top: 8px;
+            color: var(--color-text-secondary);
+            margin-top: var(--space-sm);
             padding: 0 4px;
         }
 
+        /* Quick Date Buttons — Capsule Style */
         .quick-dates {
-            margin-top: 12px;
+            margin-top: var(--space-md);
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: var(--space-sm);
         }
 
         .quick-date-btn {
-            font-size: 11px;
-            padding: 4px 10px;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            background: #f8fafc;
-            color: var(--text-dim);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            border-radius: var(--radius-full);
+            background: var(--color-bg);
+            color: var(--color-text-primary);
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
         .quick-date-btn:hover {
-            background: var(--active-bg);
-            border-color: var(--accent);
-            color: var(--accent);
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,113,227,0.3);
         }
 
-        /* ── Main Content ── */
+        .quick-date-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           MAIN CONTENT
+           ═══════════════════════════════════════════════════════════ */
         .main {
             flex: 1;
             overflow-y: auto;
-            padding: 20px 24px;
+            padding: var(--space-lg) var(--space-xl);
         }
 
-        /* Stats Bar */
+        .main-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           STATS BAR — Apple Card Style
+           ═══════════════════════════════════════════════════════════ */
         .stats-bar {
             display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
         }
 
         .stat {
-            background: var(--card);
-            border-radius: 10px;
-            padding: 14px 20px;
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-md);
             flex: 1;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-card);
         }
 
         .stat-value {
-            font-size: 26px;
+            font-size: 32px;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--color-accent);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         .stat-label {
             font-size: 11px;
-            color: var(--text-dim);
-            margin-top: 2px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            margin-top: var(--space-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        /* Section */
+        /* ═══════════════════════════════════════════════════════════
+           NEWS SECTION — Card Style
+           ═══════════════════════════════════════════════════════════ */
         .section {
-            background: var(--card);
-            border-radius: 10px;
-            margin-bottom: 16px;
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-card);
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .section-header {
-            padding: 14px 20px;
-            border-bottom: 1px solid var(--border);
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-bg-secondary);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #fafbfc;
         }
 
         .section-title {
             font-size: 15px;
             font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .section-title .icon {
+            margin-right: var(--space-sm);
         }
 
         .section-count {
-            font-size: 11px;
-            color: var(--text-dim);
-            background: var(--border);
-            padding: 3px 10px;
-            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            background: var(--color-separator);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
         }
 
-        /* News Item */
+        /* ═══════════════════════════════════════════════════════════
+           NEWS ITEM
+           ═══════════════════════════════════════════════════════════ */
         .news-item {
-            padding: 18px 20px;
-            border-bottom: 1px solid var(--border);
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--color-separator);
         }
 
-        .news-item:last-child { border-bottom: none; }
+        .news-item:last-child {
+            border-bottom: none;
+        }
 
         .news-title {
-            font-size: 14px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: var(--space-sm);
             display: flex;
             gap: 6px;
+            line-height: 1.35;
         }
 
         .news-num {
-            color: var(--accent);
+            color: var(--color-accent);
             font-weight: 700;
             flex-shrink: 0;
         }
 
         .news-meta {
             display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 12px;
-            color: var(--text-dim);
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            font-size: 13px;
+            color: var(--color-text-secondary);
             flex-wrap: wrap;
             align-items: center;
         }
 
+        /* Impact Tags — Apple Style */
         .impact-tag {
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
             font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
-        .impact-tag.high { background: var(--high-bg); color: var(--high); }
-        .impact-tag.medium { background: var(--medium-bg); color: var(--medium); }
+        .impact-tag.high {
+            background: rgba(255, 59, 48, 0.12);
+            color: var(--color-high-impact);
+        }
+
+        .impact-tag.medium {
+            background: rgba(255, 149, 0, 0.12);
+            color: var(--color-medium-impact);
+        }
+
+        .impact-tag.low {
+            background: rgba(134, 134, 139, 0.12);
+            color: var(--color-low-impact);
+        }
 
         .news-snippet {
-            font-size: 13px;
-            color: #374151;
+            font-size: 15px;
+            color: var(--color-text-primary);
             line-height: 1.7;
-            margin-bottom: 10px;
+            margin-bottom: var(--space-md);
         }
 
-        /* Key Facts */
+        /* Key Facts — Left Border Style */
         .key-facts {
-            background: #f8fafc;
-            border-left: 3px solid var(--accent);
-            border-radius: 0 6px 6px 0;
-            padding: 10px 14px;
-            margin-bottom: 10px;
+            background: var(--color-bg-secondary);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 12px 16px;
+            margin-bottom: var(--space-md);
         }
 
         .key-facts-title {
             font-size: 11px;
-            font-weight: 700;
-            color: var(--text-dim);
-            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-sm);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -284,74 +377,135 @@
         .key-facts ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .key-facts li {
-            font-size: 12px;
-            color: #374151;
-            padding: 2px 0;
-            padding-left: 14px;
+            font-size: 13px;
+            color: var(--color-text-primary);
+            padding: 4px 0;
+            padding-left: 16px;
             position: relative;
+            line-height: 1.5;
         }
 
         .key-facts li::before {
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-size: 11px;
+            color: var(--color-accent);
+            font-size: 12px;
         }
 
+        /* News Link — Secondary Button Style */
         .news-link {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            color: white;
-            background: var(--accent);
-            text-decoration: none;
-            padding: 5px 14px;
-            border-radius: 6px;
+            gap: 6px;
+            font-size: 14px;
             font-weight: 600;
-            transition: background 0.15s, transform 0.1s;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            border: 1.5px solid var(--color-accent);
+            background: var(--color-bg);
+            transition: all 0.2s;
         }
 
         .news-link:hover {
-            background: #1d4ed8;
+            background: var(--color-accent);
+            color: var(--color-bg);
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,113,227,0.25);
             text-decoration: none;
         }
 
-        .news-link:active { transform: translateY(0); }
-
-        /* Empty / Loading */
-        .empty, .loading {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-dim);
+        .news-link:active {
+            transform: translateY(0);
         }
 
-        .empty-icon { font-size: 40px; margin-bottom: 12px; }
+        /* ═══════════════════════════════════════════════════════════
+           EMPTY & LOADING STATES
+           ═══════════════════════════════════════════════════════════ */
+        .empty, .loading {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-lg);
+            color: var(--color-text-secondary);
+        }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            .sidebar { width: 100%; padding: 12px; }
-            .main { padding: 14px; }
-            .stats-bar { gap: 8px; }
-            .stat { padding: 10px 12px; }
-            .stat-value { font-size: 20px; }
-            .layout { flex-direction: column; }
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: var(--space-md);
+        }
+
+        .empty p {
+            font-size: 17px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .empty-hint {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESPONSIVE — Mobile
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--color-separator);
+                padding: var(--space-md);
+            }
+
+            .date-picker {
+                margin-bottom: var(--space-md);
+            }
+
+            .quick-dates {
+                justify-content: flex-start;
+            }
+
+            .main {
+                padding: var(--space-md);
+            }
+
+            .stats-bar {
+                gap: var(--space-sm);
+            }
+
+            .stat {
+                padding: var(--space-md) var(--space-sm);
+            }
+
+            .stat-value {
+                font-size: 24px;
+            }
+
+            .news-item {
+                padding: var(--space-md);
+            }
+
+            .news-title {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🐾 外贸新闻档案</h1>
+        <div class="header-title">🐾 外贸新闻档案</div>
         <div class="header-sub" id="headerSub">选择日期查看播报</div>
     </header>
 
     <div class="layout">
-        <!-- Sidebar: date picker -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-title">📅 选择日期</div>
             
@@ -371,11 +525,14 @@
             </div>
         </aside>
 
-        <!-- Main: news content -->
+        <!-- Main Content -->
         <main class="main" id="mainContent">
-            <div class="empty">
-                <div class="empty-icon">📅</div>
-                <p>请选择日期查看新闻播报</p>
+            <div class="main-inner">
+                <div class="empty">
+                    <div class="empty-icon">📅</div>
+                    <p>请选择日期查看新闻播报</p>
+                    <p class="empty-hint">定时任务每天 09:20 自动生成</p>
+                </div>
             </div>
         </main>
     </div>
@@ -383,7 +540,6 @@
     <script>
         const ARCHIVE_BASE = './data/';
 
-        // Category display config
         const CAT = {
             tariff:    { icon: '📦', label: '关税与贸易政策' },
             data:      { icon: '📊', label: '进出口数据' },
@@ -396,23 +552,18 @@
 
         const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
 
-        // ── State ──
         let currentDate = null;
 
-        // ── Init ──
         function init() {
-            // Set max date to today
             const today = formatDate(new Date());
             document.getElementById('dateInput').max = today;
             
-            // Bind date input change
             document.getElementById('dateInput').addEventListener('change', (e) => {
                 if (e.target.value) {
                     loadDate(e.target.value);
                 }
             });
             
-            // Auto load today
             loadToday();
         }
 
@@ -431,7 +582,6 @@
             return { main: `${m}月${day}日`, sub: wd };
         }
 
-        // ── Quick Date Loaders ──
         function loadToday() {
             const today = formatDate(new Date());
             document.getElementById('dateInput').value = today;
@@ -454,22 +604,28 @@
             loadDate(ds);
         }
 
-        // ── Load & Render ──
         async function loadDate(ds) {
             currentDate = ds;
             const { main, sub } = friendlyDate(ds);
             document.getElementById('dateDisplay').textContent = `${ds}（${sub}）`;
-            document.getElementById('mainContent').innerHTML = '<div class="loading">📰 加载中...</div>';
+            document.getElementById('mainContent').innerHTML = `
+                <div class="main-inner">
+                    <div class="loading">
+                        <div class="empty-icon">⏳</div>
+                        <p>加载中...</p>
+                    </div>
+                </div>`;
 
             try {
                 const r = await fetch(ARCHIVE_BASE + ds + '.json');
                 if (!r.ok) {
-                    // No data for this date
                     document.getElementById('mainContent').innerHTML = `
-                        <div class="empty">
-                            <div class="empty-icon">📭</div>
-                            <p>暂无 ${ds} 的播报数据</p>
-                            <p style="font-size:12px;margin-top:8px;">定时任务每天09:20自动生成</p>
+                        <div class="main-inner">
+                            <div class="empty">
+                                <div class="empty-icon">📭</div>
+                                <p>暂无 ${ds} 的播报数据</p>
+                                <p class="empty-hint">定时任务每天 09:20 自动生成</p>
+                            </div>
                         </div>`;
                     document.getElementById('headerSub').textContent = `${ds} · 暂无数据`;
                     return;
@@ -478,10 +634,12 @@
                 renderContent(data);
             } catch(e) {
                 document.getElementById('mainContent').innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">⚠️</div>
-                        <p>数据加载失败</p>
-                        <p style="font-size:12px;margin-top:8px;">请检查网络连接</p>
+                    <div class="main-inner">
+                        <div class="empty">
+                            <div class="empty-icon">⚠️</div>
+                            <p>数据加载失败</p>
+                            <p class="empty-hint">请检查网络连接</p>
+                        </div>
                     </div>`;
                 document.getElementById('headerSub').textContent = '加载失败';
             }
@@ -493,34 +651,31 @@
             const day = d.getDate();
             const wd = WEEKDAYS[d.getDay()];
 
-            // Header sub
             document.getElementById('headerSub').textContent =
                 `${data.dateShort.slice(0,4)}年${m}月${day}日（${wd}）· ${data.generatedAt} 生成`;
 
-            // Stats
             const allNews = (data.sections || []).flatMap(s => s.news || []);
             const highCount = allNews.filter(n => n.impact === 'high').length;
 
             let html = `
-                <div class="stats-bar">
-                    <div class="stat">
-                        <div class="stat-value">${allNews.length}</div>
-                        <div class="stat-label">新闻总数</div>
+                <div class="main-inner">
+                    <div class="stats-bar">
+                        <div class="stat">
+                            <div class="stat-value">${allNews.length}</div>
+                            <div class="stat-label">新闻总数</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">${(data.sections||[]).length}</div>
+                            <div class="stat-label">板块数</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">${highCount}</div>
+                            <div class="stat-label">高影响</div>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-value">${(data.sections||[]).length}</div>
-                        <div class="stat-label">板块数</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">${highCount}</div>
-                        <div class="stat-label">高影响</div>
-                    </div>
-                </div>
             `;
 
-            // Sections
             const sections = data.sections || [];
-            // Sort by CAT_ORDER
             sections.sort((a,b) => {
                 const ai = CAT_ORDER.indexOf(a.id);
                 const bi = CAT_ORDER.indexOf(b.id);
@@ -533,8 +688,8 @@
                 html += `
                     <div class="section">
                         <div class="section-header">
-                            <div class="section-title">${cat.icon} ${cat.label}</div>
-                            <div class="section-count">${news.length}条</div>
+                            <div class="section-title"><span class="icon">${cat.icon}</span>${cat.label}</div>
+                            <div class="section-count">${news.length} 条</div>
                         </div>
                         <div>
                             ${news.map((item, i) => renderNewsItem(item, i+1)).join('')}
@@ -544,9 +699,15 @@
             }
 
             if (sections.length === 0) {
-                html += `<div class="empty"><div class="empty-icon">📭</div><p>暂无内容</p></div>`;
+                html += `
+                    <div class="empty">
+                        <div class="empty-icon">📭</div>
+                        <p>暂无内容</p>
+                    </div>
+                `;
             }
 
+            html += '</div>';
             document.getElementById('mainContent').innerHTML = html;
         }
 
@@ -559,13 +720,13 @@
                    </div>`
                 : '';
             const link = item.url
-                ? `<a href="${esc(item.url)}" target="_blank" class="news-link">🔗 阅读原文 →</a>`
+                ? `<a href="${esc(item.url)}" target="_blank" class="news-link">🔗 阅读原文</a>`
                 : '';
 
             return `
                 <div class="news-item">
                     <div class="news-title">
-                        <span class="news-num">${num}、</span>
+                        <span class="news-num">${num}.</span>
                         <span>${esc(item.title)}</span>
                     </div>
                     <div class="news-meta">

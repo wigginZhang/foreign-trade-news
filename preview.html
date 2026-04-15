@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Preview — Apple Style</title>
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN TOKENS
+           ═══════════════════════════════════════════════════════════ */
+        :root {
+            --color-text-primary: #1D1D1F;
+            --color-text-secondary: #86868B;
+            --color-text-tertiary: #A1A1A6;
+            --color-accent: #0071E3;
+            --color-accent-hover: #0077ED;
+            --color-bg: #FFFFFF;
+            --color-bg-secondary: #F5F5F7;
+            --color-separator: #E5E5EA;
+            --color-high-impact: #FF3B30;
+            --color-medium-impact: #FF9500;
+            --color-low-impact: #86868B;
+
+            --font-stack: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
+            
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 100px;
+
+            --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            padding: 48px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            margin-top: 48px;
+        }
+
+        .section {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .color-swatch {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .swatch-color {
+            height: 60px;
+        }
+
+        .swatch-info {
+            background: var(--color-bg);
+            padding: 10px 12px;
+        }
+
+        .swatch-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .swatch-hex {
+            font-size: 11px;
+            color: var(--color-text-secondary);
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        /* Typography */
+        .type-sample {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-separator);
+        }
+
+        .type-sample:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .type-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .type-preview {
+            margin-bottom: 4px;
+        }
+
+        .type-meta {
+            font-size: 11px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Spacing */
+        .spacing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+        }
+
+        .spacing-item {
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Buttons */
+        .button-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            color: #FFFFFF;
+            background: var(--color-accent);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,113,227,0.25);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            color: var(--color-accent);
+            background: var(--color-bg);
+            border: 1.5px solid var(--color-accent);
+            border-radius: var(--radius-md);
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,113,227,0.25);
+        }
+
+        .btn-capsule {
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: inherit;
+            color: var(--color-text-primary);
+            background: var(--color-bg);
+            border: none;
+            border-radius: var(--radius-full);
+            padding: 8px 16px;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: all 0.2s;
+        }
+
+        .btn-capsule:hover {
+            background: var(--color-accent);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0,113,227,0.3);
+        }
+
+        /* Tags */
+        .tag-grid {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag.high {
+            background: rgba(255, 59, 48, 0.12);
+            color: var(--color-high-impact);
+        }
+
+        .tag.medium {
+            background: rgba(255, 149, 0, 0.12);
+            color: var(--color-medium-impact);
+        }
+
+        .tag.low {
+            background: rgba(134, 134, 139, 0.12);
+            color: var(--color-low-impact);
+        }
+
+        /* Cards */
+        .card-demo {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-body {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Shadow Demo */
+        .shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .shadow-item {
+            background: var(--color-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+        }
+
+        .shadow-item span {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        .shadow-subtle { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .shadow-card { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .shadow-elevated { box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+
+        /* News Card Mock */
+        .news-card-mock {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        .news-card-header {
+            padding: 14px 20px;
+            background: var(--color-bg-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-card-body {
+            padding: var(--space-lg);
+        }
+
+        .news-card-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .news-card-meta {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        .news-card-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--color-text-primary);
+            margin-bottom: 16px;
+        }
+
+        .key-facts-mock {
+            background: var(--color-bg-secondary);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+        }
+
+        .key-facts-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .key-facts-list {
+            font-size: 13px;
+            color: var(--color-text-primary);
+            padding-left: 16px;
+        }
+
+        .key-facts-list li {
+            margin-bottom: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-separator);
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apple Design System</h1>
+        <p class="subtitle">外贸新闻播报网站 — 设计预览</p>
+
+        <!-- Colors -->
+        <h2>🎨 Color Palette</h2>
+        <div class="section">
+            <div class="section-title">Primary Colors</div>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #1D1D1F;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Primary Text</div>
+                        <div class="swatch-hex">#1D1D1F</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #86868B;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Secondary Text</div>
+                        <div class="swatch-hex">#86868B</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #A1A1A6;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Tertiary Text</div>
+                        <div class="swatch-hex">#A1A1A6</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #0071E3;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Accent / Links</div>
+                        <div class="swatch-hex">#0071E3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Backgrounds & Separators</div>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #FFFFFF; border: 1px solid #E5E5EA;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Primary Background</div>
+                        <div class="swatch-hex">#FFFFFF</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #F5F5F7;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Secondary Background</div>
+                        <div class="swatch-hex">#F5F5F7</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #E5E5EA;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Separator</div>
+                        <div class="swatch-hex">#E5E5EA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Impact Tags</div>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: rgba(255, 59, 48, 0.12);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">High Impact BG</div>
+                        <div class="swatch-hex">#FF3B30 @ 12%</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: rgba(255, 149, 0, 0.12);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Medium Impact BG</div>
+                        <div class="swatch-hex">#FF9500 @ 12%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <h2>✍️ Typography</h2>
+        <div class="section">
+            <div class="section-title">Type Scale</div>
+            <div class="type-sample">
+                <div class="type-label">Display — 32px / 700</div>
+                <div class="type-preview" style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">外贸新闻档案</div>
+                <div class="type-meta">Page Title, line-height: 1.1</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Section — 21px / 700</div>
+                <div class="type-preview" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">关税与贸易政策</div>
+                <div class="type-meta">Section Heading, line-height: 1.2</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Card Title — 17px / 600</div>
+                <div class="type-preview" style="font-size: 17px; font-weight: 600;">美国宣布对华新关税政策</div>
+                <div class="type-meta">News Title, line-height: 1.35</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Body — 15px / 400</div>
+                <div class="type-preview" style="font-size: 15px; font-weight: 400; line-height: 1.6;">据央视新闻报道，美国政府宣布将于下周起对来自中国的进口商品加征新一轮关税...</div>
+                <div class="type-meta">News Body, line-height: 1.6</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Meta — 13px / 400</div>
+                <div class="type-preview" style="font-size: 13px; color: #86868B;">📍 央视新闻 · 2026年4月15日</div>
+                <div class="type-meta">Meta / Caption, line-height: 1.4</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Tag — 12px / 600</div>
+                <div class="type-preview"><span class="tag high">⚠️ 高影响</span></div>
+                <div class="type-meta">Tag / Badge, line-height: 1.0</div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <h2>🔘 Buttons</h2>
+        <div class="section">
+            <div class="section-title">Button Styles</div>
+            <div class="button-grid">
+                <button class="btn-primary">🔗 阅读原文</button>
+                <button class="btn-secondary">🔗 阅读原文</button>
+                <button class="btn-capsule">今天</button>
+                <button class="btn-capsule">昨天</button>
+                <button class="btn-capsule">前天</button>
+            </div>
+        </div>
+
+        <!-- Tags -->
+        <h2>🏷️ Impact Tags</h2>
+        <div class="section">
+            <div class="section-title">Tag Variants</div>
+            <div class="tag-grid">
+                <span class="tag high">⚠️ 高影响</span>
+                <span class="tag medium">📊 中影响</span>
+                <span class="tag low">📋 低影响</span>
+            </div>
+        </div>
+
+        <!-- Shadows -->
+        <h2>🌫️ Shadows</h2>
+        <div class="section">
+            <div class="section-title">Shadow System</div>
+            <div class="shadow-grid">
+                <div class="shadow-item shadow-subtle">
+                    <span>Subtle — 0 2px 8px</span>
+                </div>
+                <div class="shadow-item shadow-card">
+                    <span>Card — 0 2px 12px</span>
+                </div>
+                <div class="shadow-item shadow-elevated">
+                    <span>Elevated — 0 4px 20px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spacing -->
+        <h2>📏 Spacing Scale</h2>
+        <div class="section">
+            <div class="section-title">8px Base Grid</div>
+            <div class="spacing-grid">
+                <div class="spacing-item" style="height: 4px;">4px</div>
+                <div class="spacing-item" style="height: 8px;">8px</div>
+                <div class="spacing-item" style="height: 16px;">16px</div>
+                <div class="spacing-item" style="height: 24px;">24px</div>
+                <div class="spacing-item" style="height: 32px;">32px</div>
+                <div class="spacing-item" style="height: 48px;">48px</div>
+            </div>
+        </div>
+
+        <!-- Card Mockup -->
+        <h2>🃏 News Card Mockup</h2>
+        <div class="news-card-mock">
+            <div class="news-card-header">
+                <span style="font-size: 15px; font-weight: 700;">📦 关税与贸易政策</span>
+                <span style="font-size: 12px; font-weight: 600; color: #86868B; background: #E5E5EA; padding: 4px 12px; border-radius: 100px;">3 条</span>
+            </div>
+            <div class="news-card-body">
+                <div class="news-card-title">
+                    <span style="color: #0071E3; font-weight: 700;">1.</span>
+                    美国宣布对华新关税政策
+                </div>
+                <div class="news-card-meta">
+                    <span>📍 央视新闻</span>
+                    <span class="tag high">⚠️ 高影响</span>
+                </div>
+                <div class="news-card-text">
+                    据央视新闻报道，美国政府宣布将于下周起对来自中国的进口商品加征新一轮关税，涉及电子、机械、纺织品等多个领域。
+                </div>
+                <div class="key-facts-mock">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul class="key-facts-list">
+                        <li>关税税率将从目前的 25% 提升至 45%</li>
+                        <li>预计影响约 3500 亿美元的中国出口商品</li>
+                        <li>将于 2026 年 5 月 1 日正式生效</li>
+                    </ul>
+                </div>
+                <button class="btn-secondary" style="font-size: 14px; font-weight: 600; padding: 10px 20px;">🔗 阅读原文</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            DESIGN.md — Apple Style · 外贸新闻播报网站 · 2026-04-15
+        </div>
+    </div>
+</body>
+</html>
