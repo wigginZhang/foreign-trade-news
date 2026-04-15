@@ -4,44 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外贸新闻档案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ═══════════════════════════════════════════════════════════
-           DESIGN TOKENS — Apple Style
+           DESIGN TOKENS — Claude Style
            ═══════════════════════════════════════════════════════════ */
         :root {
-            /* Colors */
-            --color-text-primary: #1D1D1F;
-            --color-text-secondary: #86868B;
-            --color-text-tertiary: #A1A1A6;
-            --color-accent: #0071E3;
-            --color-accent-hover: #0077ED;
-            --color-bg: #FFFFFF;
-            --color-bg-secondary: #F5F5F7;
-            --color-separator: #E5E5EA;
-            --color-high-impact: #FF3B30;
-            --color-medium-impact: #FF9500;
-            --color-low-impact: #86868B;
+            /* Colors — Warm Terracotta Palette */
+            --color-bg: #F4F3EE;
+            --color-bg-secondary: #EDEBE6;
+            --color-bg-tertiary: #E8E6E1;
+            --color-accent: #C15F3C;
+            --color-accent-hover: #A84E30;
+            --color-text-primary: #2C2825;
+            --color-text-secondary: #6B6560;
+            --color-text-tertiary: #9A9590;
+            --color-separator: #DDDBD6;
+            --color-white: #FFFFFF;
+            --color-high-impact: #C15F3C;
+            --color-medium-impact: #B8860B;
+            --color-low-impact: #9A9590;
 
             /* Typography */
-            --font-stack: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
-            
+            --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+
             /* Spacing (8px base) */
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
-            --space-lg: 24px;
+            --space-lg: 20px;
             --space-xl: 32px;
             --space-2xl: 48px;
 
             /* Radius */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
             --radius-full: 100px;
 
-            /* Shadows */
-            --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
-            --shadow-elevated: 0 4px 20px rgba(0,0,0,0.12);
+            /* Shadows — Warm Tone */
+            --shadow-card: 0 2px 8px rgba(44,40,37,0.06);
+            --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
         }
 
         /* ═══════════════════════════════════════════════════════════
@@ -54,10 +60,10 @@
         }
 
         body {
-            font-family: var(--font-stack);
-            background: var(--color-bg-secondary);
+            font-family: var(--font-sans);
+            background: var(--color-bg);
             color: var(--color-text-primary);
-            line-height: 1.6;
+            line-height: 1.65;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -65,13 +71,13 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
-           HEADER
+           HEADER — Warm Ivory Style
            ═══════════════════════════════════════════════════════════ */
         header {
             background: var(--color-bg);
             border-bottom: 1px solid var(--color-separator);
             padding: 0 var(--space-lg);
-            height: 56px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -79,7 +85,8 @@
         }
 
         .header-title {
-            font-size: 20px;
+            font-family: var(--font-serif);
+            font-size: 22px;
             font-weight: 700;
             letter-spacing: -0.02em;
             color: var(--color-text-primary);
@@ -101,7 +108,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
-           SIDEBAR — Apple Style
+           SIDEBAR — Warm Gray
            ═══════════════════════════════════════════════════════════ */
         .sidebar {
             width: 240px;
@@ -113,17 +120,17 @@
         }
 
         .sidebar-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--color-text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin-bottom: var(--space-md);
         }
 
         /* Date Picker Card */
         .date-picker {
-            background: var(--color-bg);
+            background: var(--color-white);
             border-radius: var(--radius-lg);
             padding: var(--space-md);
             box-shadow: var(--shadow-card);
@@ -134,11 +141,11 @@
             display: flex;
             align-items: center;
             gap: var(--space-sm);
-            padding: 12px 14px;
+            padding: 10px 12px;
             border: 1px solid var(--color-separator);
             border-radius: var(--radius-md);
             cursor: pointer;
-            transition: border-color 0.15s;
+            transition: border-color 0.2s;
             background: var(--color-bg);
         }
 
@@ -149,7 +156,7 @@
         .date-input-wrapper input[type="date"] {
             border: none;
             background: transparent;
-            font-size: 15px;
+            font-size: 14px;
             font-family: inherit;
             color: var(--color-text-primary);
             cursor: pointer;
@@ -159,11 +166,12 @@
 
         .date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
             cursor: pointer;
-            opacity: 0.6;
+            opacity: 0.5;
+            filter: sepia(0.3) hue-rotate(-10deg);
         }
 
         .date-display {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--color-text-secondary);
             margin-top: var(--space-sm);
             padding: 0 4px;
@@ -180,25 +188,19 @@
         .quick-date-btn {
             font-size: 13px;
             font-weight: 500;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border: none;
             border-radius: var(--radius-full);
             background: var(--color-bg);
             color: var(--color-text-primary);
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
         .quick-date-btn:hover {
             background: var(--color-accent);
-            color: var(--color-bg);
+            color: var(--color-white);
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,113,227,0.3);
-        }
-
-        .quick-date-btn:active {
-            transform: translateY(0);
         }
 
         /* ═══════════════════════════════════════════════════════════
@@ -211,12 +213,12 @@
         }
 
         .main-inner {
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto;
         }
 
         /* ═══════════════════════════════════════════════════════════
-           STATS BAR — Apple Card Style
+           STATS BAR — Warm Card Style
            ═══════════════════════════════════════════════════════════ */
         .stats-bar {
             display: flex;
@@ -225,7 +227,7 @@
         }
 
         .stat {
-            background: var(--color-bg);
+            background: var(--color-white);
             border-radius: var(--radius-lg);
             padding: var(--space-lg) var(--space-md);
             flex: 1;
@@ -234,7 +236,7 @@
         }
 
         .stat-value {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--color-accent);
             letter-spacing: -0.02em;
@@ -254,7 +256,7 @@
            NEWS SECTION — Card Style
            ═══════════════════════════════════════════════════════════ */
         .section {
-            background: var(--color-bg);
+            background: var(--color-white);
             border-radius: var(--radius-lg);
             margin-bottom: var(--space-md);
             box-shadow: var(--shadow-card);
@@ -262,7 +264,7 @@
         }
 
         .section-header {
-            padding: var(--space-md) var(--space-lg);
+            padding: 14px var(--space-lg);
             background: var(--color-bg-secondary);
             display: flex;
             justify-content: space-between;
@@ -270,8 +272,9 @@
         }
 
         .section-title {
-            font-size: 15px;
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 14px;
+            font-weight: 600;
             color: var(--color-text-primary);
         }
 
@@ -281,11 +284,11 @@
 
         .section-count {
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--color-text-secondary);
             background: var(--color-separator);
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
         }
 
         /* ═══════════════════════════════════════════════════════════
@@ -301,12 +304,13 @@
         }
 
         .news-title {
-            font-size: 17px;
+            font-family: var(--font-serif);
+            font-size: 16px;
             font-weight: 600;
             margin-bottom: var(--space-sm);
             display: flex;
-            gap: 6px;
-            line-height: 1.35;
+            gap: 8px;
+            line-height: 1.4;
         }
 
         .news-num {
@@ -318,16 +322,16 @@
         .news-meta {
             display: flex;
             gap: var(--space-sm);
-            margin-bottom: var(--space-sm);
+            margin-bottom: 10px;
             font-size: 13px;
             color: var(--color-text-secondary);
             flex-wrap: wrap;
             align-items: center;
         }
 
-        /* Impact Tags — Apple Style */
+        /* Impact Tags — Terracotta Style */
         .impact-tag {
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: var(--radius-sm);
             font-size: 12px;
             font-weight: 600;
@@ -335,34 +339,34 @@
         }
 
         .impact-tag.high {
-            background: rgba(255, 59, 48, 0.12);
+            background: rgba(193, 95, 60, 0.12);
             color: var(--color-high-impact);
         }
 
         .impact-tag.medium {
-            background: rgba(255, 149, 0, 0.12);
+            background: rgba(184, 134, 11, 0.12);
             color: var(--color-medium-impact);
         }
 
         .impact-tag.low {
-            background: rgba(134, 134, 139, 0.12);
+            background: rgba(154, 149, 144, 0.12);
             color: var(--color-low-impact);
         }
 
         .news-snippet {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--color-text-primary);
-            line-height: 1.7;
-            margin-bottom: var(--space-md);
+            line-height: 1.65;
+            margin-bottom: 14px;
         }
 
         /* Key Facts — Left Border Style */
         .key-facts {
-            background: var(--color-bg-secondary);
+            background: var(--color-bg);
             border-left: 3px solid var(--color-accent);
             border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 12px 16px;
-            margin-bottom: var(--space-md);
+            padding: 12px 14px;
+            margin-bottom: 14px;
         }
 
         .key-facts-title {
@@ -383,8 +387,8 @@
         .key-facts li {
             font-size: 13px;
             color: var(--color-text-primary);
-            padding: 4px 0;
-            padding-left: 16px;
+            padding: 3px 0;
+            padding-left: 14px;
             position: relative;
             line-height: 1.5;
         }
@@ -406,18 +410,17 @@
             font-weight: 600;
             color: var(--color-accent);
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: var(--radius-md);
             border: 1.5px solid var(--color-accent);
-            background: var(--color-bg);
+            background: var(--color-white);
             transition: all 0.2s;
         }
 
         .news-link:hover {
             background: var(--color-accent);
-            color: var(--color-bg);
+            color: var(--color-white);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,113,227,0.25);
             text-decoration: none;
         }
 
@@ -435,13 +438,15 @@
         }
 
         .empty-icon {
-            font-size: 48px;
+            font-size: 44px;
             margin-bottom: var(--space-md);
         }
 
         .empty p {
-            font-size: 17px;
+            font-family: var(--font-serif);
+            font-size: 18px;
             margin-bottom: var(--space-sm);
+            color: var(--color-text-primary);
         }
 
         .empty-hint {
@@ -485,7 +490,7 @@
             }
 
             .stat-value {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .news-item {
