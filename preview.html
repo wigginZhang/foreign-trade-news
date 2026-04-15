@@ -8,9 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* ═══════════════════════════════════════════════════════════
-           DESIGN TOKENS — Claude Style
-           ═══════════════════════════════════════════════════════════ */
         :root {
             --color-bg: #F4F3EE;
             --color-bg-secondary: #EDEBE6;
@@ -82,6 +79,14 @@
             margin-top: 48px;
         }
 
+        h3 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+
         .section {
             background: var(--color-white);
             border-radius: var(--radius-lg);
@@ -130,6 +135,7 @@
         .swatch-hex {
             font-size: 11px;
             color: var(--color-text-secondary);
+            font-family: 'SF Mono', Monaco, monospace;
         }
 
         /* Typography */
@@ -154,13 +160,10 @@
             margin-bottom: 4px;
         }
 
-        .type-preview {
-            margin-bottom: 4px;
-        }
-
         .type-meta {
             font-size: 11px;
             color: var(--color-text-tertiary);
+            margin-top: 4px;
         }
 
         /* Buttons */
@@ -263,88 +266,144 @@
             color: var(--color-low-impact);
         }
 
-        /* News Card Mock */
-        .news-card-mock {
-            background: var(--color-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-card);
-            overflow: hidden;
+        /* Shadow Demo */
+        .shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
         }
 
-        .news-card-header {
-            padding: 14px 20px;
+        .shadow-item {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+        }
+
+        .shadow-item span {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Spacing */
+        .spacing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 8px;
+        }
+
+        .spacing-item {
             background: var(--color-bg-secondary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Layout Structure Preview */
+        .layout-preview {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .layout-preview header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-separator);
+            padding: 12px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .news-card-header .title {
-            font-family: var(--font-serif);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .news-card-header .count {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            background: var(--color-separator);
-            padding: 4px 10px;
-            border-radius: var(--radius-sm);
-        }
-
-        .news-card-body {
-            padding: var(--space-lg);
-        }
-
-        .news-card-title {
+        .layout-preview header .title {
             font-family: var(--font-serif);
             font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
         }
 
-        .news-card-meta {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-            font-size: 13px;
+        .layout-preview header .subtitle {
+            font-size: 12px;
             color: var(--color-text-secondary);
+            margin: 0;
         }
 
-        .news-card-text {
-            font-size: 14px;
-            line-height: 1.65;
-            color: var(--color-text-primary);
-            margin-bottom: 14px;
+        .layout-preview .body {
+            display: flex;
         }
 
-        .key-facts-mock {
-            background: var(--color-bg);
-            border-left: 3px solid var(--color-accent);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 12px 14px;
-            margin-bottom: 14px;
+        .layout-preview .sidebar {
+            width: 180px;
+            background: var(--color-bg-secondary);
+            padding: 16px;
+            border-right: 1px solid var(--color-separator);
         }
 
-        .key-facts-title {
+        .layout-preview .main {
+            flex: 1;
+            padding: 16px;
+        }
+
+        .layout-preview .card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            margin-bottom: 8px;
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Radius Demo */
+        .radius-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .radius-item {
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-size: 11px;
             font-weight: 600;
-            color: var(--color-text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        }
+
+        /* Design Philosophy */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 500px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .philosophy-item {
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+
+        .philosophy-item h4 {
+            font-family: var(--font-serif);
+            font-size: 14px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .key-facts-list {
+        .philosophy-item ul {
             font-size: 13px;
-            color: var(--color-text-primary);
-            padding-left: 14px;
-        }
-
-        .key-facts-list li {
-            margin-bottom: 4px;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            padding-left: 16px;
         }
 
         .footer {
@@ -359,8 +418,45 @@
 </head>
 <body>
     <div class="container">
-        <h1>Claude Design System</h1>
+        <h1>🍂 Claude Design System</h1>
         <p class="subtitle">外贸新闻播报网站 — 设计预览</p>
+
+        <!-- Layout Structure -->
+        <h2>📐 Layout Structure</h2>
+        <div class="layout-preview">
+            <header>
+                <span class="title">🐾 外贸新闻档案</span>
+                <span class="subtitle">2026年4月15日</span>
+            </header>
+            <div class="body">
+                <div class="sidebar">
+                    <div style="font-size: 10px; color: #9A9590; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">📅 选择日期</div>
+                    <div style="background: white; border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(44,40,37,0.06); margin-bottom: 12px;">
+                        <div style="font-size: 13px;">2026-04-15</div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        <span class="btn-capsule" style="font-size: 11px; padding: 6px 10px;">今天</span>
+                        <span class="btn-capsule" style="font-size: 11px; padding: 6px 10px;">昨天</span>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="card" style="display: flex; gap: 12px;">
+                        <div style="flex: 1; text-align: center;">
+                            <div style="font-size: 22px; font-weight: 700; color: #C15F3C;">12</div>
+                            <div style="font-size: 10px; color: #6B6560; text-transform: uppercase;">新闻</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <div style="font-size: 22px; font-weight: 700; color: #C15F3C;">5</div>
+                            <div style="font-size: 10px; color: #6B6560; text-transform: uppercase;">板块</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div style="font-size: 12px; font-weight: 600; margin-bottom: 8px;">📦 关税政策</div>
+                        <div style="font-size: 13px; color: #6B6560;">真实新闻内容将在此处显示</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Colors -->
         <h2>🎨 Color Palette</h2>
@@ -371,7 +467,7 @@
                     <div class="swatch-color" style="background: #2C2825;"></div>
                     <div class="swatch-info">
                         <div class="swatch-name">Primary Text</div>
-                        <div class="swatch-hex">#2C2825 (warm black)</div>
+                        <div class="swatch-hex">#2C2825</div>
                     </div>
                 </div>
                 <div class="color-swatch">
@@ -399,7 +495,7 @@
         </div>
 
         <div class="section">
-            <div class="section-title">Backgrounds</div>
+            <div class="section-title">Backgrounds & Separators</div>
             <div class="color-grid">
                 <div class="color-swatch">
                     <div class="swatch-color" style="background: #F4F3EE;"></div>
@@ -444,38 +540,38 @@
         <!-- Typography -->
         <h2>✍️ Typography</h2>
         <div class="section">
-            <div class="section-title">Serif + Sans Font Stack</div>
+            <div class="section-title">Font Stack: Playfair Display (Serif) + Inter (Sans)</div>
             <div class="type-sample">
-                <div class="type-label">Display — Playfair Display / 700</div>
-                <div class="type-preview" style="font-family: var(--font-serif); font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">外贸新闻档案</div>
-                <div class="type-meta">Serif for headings, line-height: 1.1</div>
+                <div class="type-label">Display — Playfair Display / 700 / 32px</div>
+                <div style="font-family: var(--font-serif); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;">外贸新闻档案</div>
+                <div class="type-meta">For page titles, line-height: 1.1</div>
             </div>
             <div class="type-sample">
-                <div class="type-label">Section — Playfair Display / 600</div>
-                <div class="type-preview" style="font-family: var(--font-serif); font-size: 21px; font-weight: 600;">关税与贸易政策</div>
-                <div class="type-meta">Serif for section titles, line-height: 1.2</div>
+                <div class="type-label">Section Heading — Playfair Display / 600 / 21px</div>
+                <div style="font-family: var(--font-serif); font-size: 21px; font-weight: 600; line-height: 1.2;">关税与贸易政策</div>
+                <div class="type-meta">For section titles, line-height: 1.2</div>
             </div>
             <div class="type-sample">
-                <div class="type-label">Card Title — Playfair Display / 600</div>
-                <div class="type-preview" style="font-family: var(--font-serif); font-size: 16px; font-weight: 600;">美国宣布对华新关税政策</div>
-                <div class="type-meta">News titles use serif, line-height: 1.4</div>
+                <div class="type-label">Card Title — Playfair Display / 600 / 16px</div>
+                <div style="font-family: var(--font-serif); font-size: 16px; font-weight: 600; line-height: 1.4;">美国宣布对华新关税政策</div>
+                <div class="type-meta">For news titles, line-height: 1.4</div>
             </div>
             <div class="type-sample">
-                <div class="type-label">Body — Inter / 400</div>
-                <div class="type-preview" style="font-size: 14px; font-weight: 400; line-height: 1.65;">据央视新闻报道，美国政府宣布将于下周起对来自中国的进口商品加征新一轮关税...</div>
-                <div class="type-meta">Body text uses sans-serif, line-height: 1.65 (higher for readability)</div>
+                <div class="type-label">Body — Inter / 400 / 14px / line-height 1.65</div>
+                <div style="font-size: 14px; font-weight: 400; line-height: 1.65;">新闻正文内容在此显示，较高的行高确保阅读舒适性。</div>
+                <div class="type-meta">For news body text, line-height: 1.65</div>
             </div>
             <div class="type-sample">
-                <div class="type-label">Meta — 13px / #6B6560</div>
-                <div class="type-preview" style="font-size: 13px; color: #6B6560;">📍 央视新闻 · 2026年4月15日</div>
-                <div class="type-meta">Meta / Caption text</div>
+                <div class="type-label">Meta / Caption — 13px / #6B6560</div>
+                <div style="font-size: 13px; color: #6B6560;">📍 来源 · 2026年4月15日</div>
+                <div class="type-meta">For metadata, line-height: 1.4</div>
             </div>
         </div>
 
         <!-- Buttons -->
         <h2>🔘 Buttons</h2>
         <div class="section">
-            <div class="section-title">Button Styles</div>
+            <div class="section-title">Button Variants</div>
             <div class="button-grid">
                 <button class="btn-primary">🔗 阅读原文</button>
                 <button class="btn-secondary">🔗 阅读原文</button>
@@ -485,65 +581,75 @@
             </div>
         </div>
 
-        <!-- Card Mockup -->
-        <h2>🃏 News Card Mockup</h2>
-        <div class="news-card-mock">
-            <div class="news-card-header">
-                <span class="title">📦 关税与贸易政策</span>
-                <span class="count">3 条</span>
+        <!-- Shadows -->
+        <h2>🌫️ Shadows</h2>
+        <div class="section">
+            <div class="section-title">Warm Shadow Palette — rgba(44,40,37,x)</div>
+            <div class="shadow-grid">
+                <div class="shadow-item" style="box-shadow: 0 1px 3px rgba(44,40,37,0.05);">
+                    <span>Subtle — 0 1px 3px</span>
+                </div>
+                <div class="shadow-item" style="box-shadow: 0 2px 8px rgba(44,40,37,0.06);">
+                    <span>Card — 0 2px 8px</span>
+                </div>
+                <div class="shadow-item" style="box-shadow: 0 4px 16px rgba(44,40,37,0.10);">
+                    <span>Elevated — 0 4px 16px</span>
+                </div>
             </div>
-            <div class="news-card-body">
-                <div class="news-card-title">
-                    <span style="color: #C15F3C; font-weight: 700;">1.</span>
-                    美国宣布对华新关税政策
-                </div>
-                <div class="news-card-meta">
-                    <span>📍 央视新闻</span>
-                    <span class="tag high">⚠️ 高影响</span>
-                </div>
-                <div class="news-card-text">
-                    据央视新闻报道，美国政府宣布将于下周起对来自中国的进口商品加征新一轮关税，涉及电子、机械、纺织品等多个领域。
-                </div>
-                <div class="key-facts-mock">
-                    <div class="key-facts-title">关键事实</div>
-                    <ul class="key-facts-list">
-                        <li>关税税率将从目前的 25% 提升至 45%</li>
-                        <li>预计影响约 3500 亿美元的中国出口商品</li>
-                        <li>将于 2026 年 5 月 1 日正式生效</li>
-                    </ul>
-                </div>
-                <button class="btn-secondary" style="font-size: 14px; padding: 9px 18px;">🔗 阅读原文</button>
+        </div>
+
+        <!-- Spacing -->
+        <h2>📏 Spacing Scale (8px Base)</h2>
+        <div class="section">
+            <div class="section-title">8px Grid System</div>
+            <div class="spacing-grid">
+                <div class="spacing-item" style="height: 4px;">4</div>
+                <div class="spacing-item" style="height: 8px;">8</div>
+                <div class="spacing-item" style="height: 16px;">16</div>
+                <div class="spacing-item" style="height: 20px;">20</div>
+                <div class="spacing-item" style="height: 32px;">32</div>
+                <div class="spacing-item" style="height: 48px;">48</div>
+            </div>
+        </div>
+
+        <!-- Border Radius -->
+        <h2>🔲 Border Radius</h2>
+        <div class="section">
+            <div class="section-title">Radius Scale</div>
+            <div class="radius-grid">
+                <div class="radius-item" style="width: 40px; height: 40px; border-radius: 6px;">6</div>
+                <div class="radius-item" style="width: 40px; height: 40px; border-radius: 8px;">8</div>
+                <div class="radius-item" style="width: 40px; height: 40px; border-radius: 12px;">12</div>
+                <div class="radius-item" style="width: 80px; height: 40px; border-radius: 100px;">100</div>
             </div>
         </div>
 
         <!-- Design Philosophy -->
         <h2>💡 Design Philosophy</h2>
-        <div class="section">
-            <div class="section-title">Claude vs Apple</div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                <div>
-                    <div style="font-weight: 600; margin-bottom: 8px; color: #C15F3C;">🍎 Apple</div>
-                    <ul style="font-size: 14px; color: #6B6560; line-height: 1.8; padding-left: 16px;">
-                        <li>纯白背景</li>
-                        <li>蓝色强调 (#0071E3)</li>
-                        <li>SF Pro 系统字体</li>
-                        <li>科技感、高端</li>
-                    </ul>
-                </div>
-                <div>
-                    <div style="font-weight: 600; margin-bottom: 8px; color: #C15F3C;">🟤 Claude</div>
-                    <ul style="font-size: 14px; color: #6B6560; line-height: 1.8; padding-left: 16px;">
-                        <li>暖 Ivory 背景</li>
-                        <li>赤陶色强调 (#C15F3C)</li>
-                        <li>Editorial Serif + Sans</li>
-                        <li>温暖感、可信、从容</li>
-                    </ul>
-                </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-item">
+                <h4>🍎 Apple Style</h4>
+                <ul>
+                    <li>纯白背景</li>
+                    <li>蓝色强调 #0071E3</li>
+                    <li>SF Pro 系统字体</li>
+                    <li>科技感、高端</li>
+                </ul>
+            </div>
+            <div class="philosophy-item">
+                <h4>🍂 Claude Style</h4>
+                <ul>
+                    <li>暖 Ivory #F4F3EE</li>
+                    <li>赤陶色 #C15F3C</li>
+                    <li>Editorial Serif + Sans</li>
+                    <li>温暖、可信、从容</li>
+                </ul>
             </div>
         </div>
 
         <div class="footer">
-            DESIGN.md — Claude Style · 外贸新闻播报网站 · 2026-04-15
+            DESIGN.md — Claude Style · 外贸新闻播报网站 · 2026-04-15<br>
+            实际内容请访问 index.html 查看真实新闻数据
         </div>
     </div>
 </body>
