@@ -848,6 +848,16 @@
     <script>
         loadHistory();
     </script>
+
+    <script>
+        console.log('[TEST] second script running');
+        console.log('[TEST] historyList exists:', !!document.getElementById('historyList'));
+        console.log('[TEST] data-dates:', document.getElementById('historyList')?.dataset?.dates);
+        var hl = document.getElementById('historyList');
+        if (hl) {
+            hl.innerHTML = '<li><a href="./index.html?date=2026-04-16">2026-04-16（周四）</a></li><li><a href="./index.html?date=2026-04-15">2026-04-15（周三）</a></li>';
+        }
+    </script>
 </body>
 </html>
 
