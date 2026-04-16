@@ -837,11 +837,12 @@
                 el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">渲染失败</span></li>';
             }
         }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadHistory);
-        } else {
-            loadHistory();
-        }
+        document.addEventListener('readystatechange', function() {
+            if (document.readyState !== 'loading') {
+                loadHistory();
+            }
+        });
+        if (document.readyState !== 'loading') loadHistory();
     </script>
 
     <!-- History Archive -->
