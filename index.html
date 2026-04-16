@@ -818,27 +818,23 @@
 
         init();
 
-        // Load history archive list from manifest
-        async function loadHistory() {
+        // Render history list from data-dates attribute (no network request)
+        function loadHistory() {
             const el = document.getElementById('historyList');
             if (!el) return;
             try {
-                const r = await fetch('./data/manifest.json');
-                if (!r.ok) throw new Error('manifest not found');
-                const manifest = await r.json();
-                const dates = manifest.dates || [];
+                const dates = JSON.parse(el.dataset.dates || '[]');
                 if (dates.length === 0) {
                     el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">暂无历史数据</span></li>';
                     return;
                 }
-                el.innerHTML = dates.map(item => {
-                    const ds = item.date;
+                el.innerHTML = dates.map(ds => {
                     const d = new Date(ds);
                     const wd = ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
                     return `<li><a href="./index.html?date=${ds}">${ds}（${wd}）</a></li>`;
                 }).join('');
             } catch(e) {
-                el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">加载失败: ' + e.message + '</span></li>';
+                el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">渲染失败</span></li>';
             }
         }
         loadHistory();
@@ -847,9 +843,7 @@
     <!-- History Archive -->
     <div class="history-section">
         <h2>📅 历史日报目录</h2>
-        <ul class="history-list" id="historyList">
-            <li><span style="font-size:13px;color:var(--color-text-tertiary)">加载中...</span></li>
-        </ul>
+        <ul class="history-list" id="historyList" data-dates='["2026-04-16","2026-04-15","2026-04-14","2026-04-13","2026-04-11","2026-04-10"]'></ul>
     </div>
 </body>
 </html>
