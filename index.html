@@ -837,19 +837,6 @@
                 el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">渲染失败</span></li>';
             }
         }
-        console.log('[DEBUG] readyState at script run:', document.readyState);
-        document.addEventListener('readystatechange', function() {
-            console.log('[DEBUG] readystatechange:', document.readyState);
-            if (document.readyState !== 'loading') {
-                loadHistory();
-            }
-        });
-        if (document.readyState !== 'loading') {
-            console.log('[DEBUG] calling loadHistory() directly');
-            loadHistory();
-        } else {
-            console.log('[DEBUG] waiting for readystatechange');
-        }
     </script>
 
     <!-- History Archive -->
@@ -857,5 +844,10 @@
         <h2>📅 历史日报目录</h2>
         <ul class="history-list" id="historyList" data-dates='["2026-04-16","2026-04-15","2026-04-14","2026-04-13","2026-04-11","2026-04-10"]'></ul>
     </div>
+
+    <script>
+        loadHistory();
+    </script>
 </body>
 </html>
+
