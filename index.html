@@ -837,12 +837,19 @@
                 el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">渲染失败</span></li>';
             }
         }
+        console.log('[DEBUG] readyState at script run:', document.readyState);
         document.addEventListener('readystatechange', function() {
+            console.log('[DEBUG] readystatechange:', document.readyState);
             if (document.readyState !== 'loading') {
                 loadHistory();
             }
         });
-        if (document.readyState !== 'loading') loadHistory();
+        if (document.readyState !== 'loading') {
+            console.log('[DEBUG] calling loadHistory() directly');
+            loadHistory();
+        } else {
+            console.log('[DEBUG] waiting for readystatechange');
+        }
     </script>
 
     <!-- History Archive -->
