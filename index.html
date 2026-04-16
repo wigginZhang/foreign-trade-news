@@ -576,6 +576,14 @@
                     <button class="quick-date-btn" onclick="loadDaysAgo(2)">前天</button>
                     <button class="quick-date-btn" onclick="loadDaysAgo(7)">7天前</button>
                 </div>
+
+                <div class="history-section">
+                    <h2>📅 历史日报目录</h2>
+                    <ul class="history-list" id="historyList" data-dates='["2026-04-16","2026-04-15","2026-04-14","2026-04-13","2026-04-11","2026-04-10"]'>
+                        <li><a href="./index.html?date=2026-04-16">2026-04-16（周四）</a></li>
+                        <li><a href="./index.html?date=2026-04-15">2026-04-15（周三）</a></li>
+                    </ul>
+                </div>
             </div>
         </aside>
 
@@ -839,27 +847,8 @@
         }
     </script>
 
-    <!-- History Archive -->
-    <div class="history-section">
-        <h2>📅 历史日报目录</h2>
-        <ul class="history-list" id="historyList" data-dates='["2026-04-16","2026-04-15","2026-04-14","2026-04-13","2026-04-11","2026-04-10"]'>
-            <li><a href="./index.html?date=2026-04-16">2026-04-16（周四）</a></li>
-            <li><a href="./index.html?date=2026-04-15">2026-04-15（周三）</a></li>
-        </ul>
-    </div>
-
     <script>
         loadHistory();
-    </script>
-
-    <script>
-        console.log('[TEST] second script running');
-        console.log('[TEST] historyList exists:', !!document.getElementById('historyList'));
-        console.log('[TEST] data-dates:', document.getElementById('historyList')?.dataset?.dates);
-        var hl = document.getElementById('historyList');
-        if (hl) {
-            hl.innerHTML = '<li><a href="./index.html?date=2026-04-16">2026-04-16（周四）</a></li><li><a href="./index.html?date=2026-04-15">2026-04-15（周三）</a></li>';
-        }
     </script>
 </body>
 </html>
