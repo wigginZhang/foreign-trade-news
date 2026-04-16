@@ -501,6 +501,55 @@
                 font-size: 15px;
             }
         }
+
+        /* History Section */
+        .history-section {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-xl);
+            padding: 25px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .history-section h2 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            border-bottom: 1px solid var(--color-separator);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .history-list li {
+            margin: 0;
+        }
+
+        .history-list a {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--color-bg);
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .history-list a:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
@@ -753,6 +802,48 @@
         }
 
         init();
+
+        // Load history archive list
+        async function loadHistory() {
+            const el = document.getElementById('historyList');
+            if (!el) return;
+            try {
+                // Fetch all available dates from data/ directory
+                // We probe for each date from today going back
+                const today = new Date();
+                const dates = [];
+                for (let i = 0; i < 60; i++) {
+                    const d = new Date(today);
+                    d.setDate(d.getDate() - i);
+                    const y = d.getFullYear();
+                    const m = String(d.getMonth() + 1).padStart(2, '0');
+                    const day = String(d.getDate()).padStart(2, '0');
+                    const ds = `${y}-${m}-${day}`;
+                    const r = await fetch('./data/' + ds + '.json');
+                    if (r.ok) dates.push(ds);
+                }
+                if (dates.length === 0) {
+                    el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">暂无历史数据</span></li>';
+                    return;
+                }
+                el.innerHTML = dates.map(ds => {
+                    const d = new Date(ds);
+                    const wd = ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
+                    return `<li><a href="./daily/${ds}.html">${ds}（${wd}）</a></li>`;
+                }).join('');
+            } catch(e) {
+                el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">加载失败</span></li>';
+            }
+        }
+        loadHistory();
     </script>
+
+    <!-- History Archive -->
+    <div class="history-section">
+        <h2>📅 历史日报目录</h2>
+        <ul class="history-list" id="historyList">
+            <li><span style="font-size:13px;color:var(--color-text-tertiary)">加载中...</span></li>
+        </ul>
+    </div>
 </body>
 </html>

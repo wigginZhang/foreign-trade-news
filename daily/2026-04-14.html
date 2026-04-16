@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月14日 周一 外贸新闻播报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --color-bg: #F4F3EE; --color-bg-secondary: #EDEBE6; --color-bg-tertiary: #E8E6E1;
+    --color-accent: #C15F3C; --color-accent-hover: #A84E30;
+    --color-text-primary: #2C2825; --color-text-secondary: #6B6560; --color-text-tertiary: #9A9590;
+    --color-separator: #DDDBD6; --color-white: #FFFFFF;
+    --color-high-impact: #C15F3C; --color-medium-impact: #B8860B; --color-low-impact: #9A9590;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 20px; --space-xl: 32px;
+    --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 100px;
+    --shadow-card: 0 2px 8px rgba(44,40,37,0.06); --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+header { background: var(--color-bg); border-bottom: 1px solid var(--color-separator); padding: 0 var(--space-lg); height: 60px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.header-title { font-family: var(--font-serif); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.header-link { font-size: 14px; color: var(--color-accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.header-link:hover { color: var(--color-accent-hover); }
+.container { max-width: 800px; margin: 0 auto; padding: var(--space-xl); }
+.day-header { text-align: center; margin-bottom: var(--space-xl); }
+.day-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-sm); }
+.day-subtitle { font-size: 15px; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+.nav-buttons { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); flex-wrap: wrap; }
+.nav-btn { background: var(--color-white); border: 1px solid var(--color-separator); border-radius: var(--radius-full); padding: 8px 20px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+.nav-btn:hover { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); transform: translateY(-2px); }
+.stats-bar { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.stat { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-lg); flex: 1; text-align: center; box-shadow: var(--shadow-card); }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--color-accent); letter-spacing: -0.02em; line-height: 1.1; }
+.stat-label { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-top: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.section { background: var(--color-white); border-radius: var(--radius-lg); margin-bottom: var(--space-md); box-shadow: var(--shadow-card); overflow: hidden; }
+.section-header { padding: 14px var(--space-lg); background: var(--color-bg-secondary); display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-family: var(--font-serif); font-size: 14px; font-weight: 600; }
+.section-title .icon { margin-right: var(--space-sm); }
+.section-count { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); background: var(--color-separator); padding: 4px 10px; border-radius: var(--radius-sm); }
+.news-item { padding: var(--space-lg); border-bottom: 1px solid var(--color-separator); }
+.news-item:last-child { border-bottom: none; }
+.news-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); display: flex; gap: 8px; line-height: 1.4; }
+.news-num { color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+.news-title a { color: var(--color-text-primary); text-decoration: none; }
+.news-title a:hover { color: var(--color-accent); }
+.news-meta { display: flex; gap: var(--space-sm); margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); flex-wrap: wrap; align-items: center; }
+.impact-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+.impact-tag.high { background: rgba(193,95,60,0.12); color: var(--color-high-impact); }
+.impact-tag.medium { background: rgba(184,134,11,0.12); color: var(--color-medium-impact); }
+.impact-tag.low { background: rgba(154,149,144,0.12); color: var(--color-low-impact); }
+.news-source { color: var(--color-text-tertiary); }
+.news-snippet { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 14px; }
+.key-facts { background: var(--color-bg); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 12px 14px; margin-bottom: 14px; }
+.key-facts-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+.key-facts ul { list-style: none; padding: 0; margin: 0; }
+.key-facts li { font-size: 13px; color: var(--color-text-primary); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+.key-facts li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+.news-actions { text-align: right; }
+.read-more { font-size: 13px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.read-more:hover { color: var(--color-accent-hover); }
+.footer { text-align: center; font-size: 13px; color: var(--color-text-tertiary); padding: var(--space-xl); margin-top: var(--space-xl); border-top: 1px solid var(--color-separator); }
+.footer a { color: var(--color-accent); }
+.history-section { background: var(--color-white); border-radius: var(--radius-lg); margin-top: var(--space-xl); padding: 25px; box-shadow: var(--shadow-card); }
+.history-section h2 { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--color-text-primary); border-bottom: 1px solid var(--color-separator); padding-bottom: 12px; margin-bottom: 16px; }
+.history-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.history-list li { margin: 0; }
+.history-list a { display: inline-block; padding: 6px 14px; background: var(--color-bg); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; }
+.history-list a:hover { background: var(--color-accent); color: var(--color-white); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🐾 外贸新闻播报</div>
+        <a href="../index.html" class="header-link">← 返回首页</a>
+    </header>
+    <div class="container">
+        <div class="day-header">
+            <h1 class="day-title">4月14日 周一</h1>
+            <p class="day-subtitle">2026-04-14 · 09:20 生成 · 9 条新闻 · 1 个分类</p>
+            <div class="nav-buttons"><a href="2026-04-14.html" class="nav-btn">← 4月14日周一</a><a href="../index.html" class="nav-btn">📅 返回目录</a><a href="2026-04-14.html" class="nav-btn">4月14日周一 →</a></div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-value">9</div><div class="stat-label">新闻总数</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">内容分类</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">高影响</div></div>
+        </div>
+        <div class="section"><div class="section-header"><div class="section-title"><span class="icon">📌</span>全部新闻</div><div class="section-count">9 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.linkedin.com/posts/seko-logistics_china-export-tax-rebate-changes-2026-complete-activity-7442374714951626752-ZfYk" target="_blank">SEKO Logistics - China Export Tax Rebate Changes 2026 - LinkedIn</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">linkedin.com</span></div>
+        <div class="news-snippet">China&#39;s 2026 export tax rebate changes are more than a tax update â they&#39;re a supply chain planning event. From April 1, 2026, #China will</div>
+        
+        <div class="news-actions"><a href="https://www.linkedin.com/posts/seko-logistics_china-export-tax-rebate-changes-2026-complete-activity-7442374714951626752-ZfYk" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://english.www.gov.cn/archive/statistics/202603/10/content_WS69afb2c2c6d00ca5f9a09c60.html" target="_blank">China&#39;s foreign trade records strong start to 2026 with double-digit ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">english.www.gov.cn</span></div>
+        <div class="news-snippet">BEIJING, March 10 -- China&#39;s foreign trade has posted a robust start to the year, with the total value of trade in goods recording double-digit growth, surging 18.3 percent year on year in the January-February period, latest official data showed. Broken down by region and country, the Association of Southeast Asian Nations (ASEAN) remained China&#39;s largest trading partner, with China-ASEAN trade value hitting more than 1.24 trillion yuan in the first two months of 2026, up 20.3 percent year on year. This was followed by the European Union&#39;s 998.94 billion yuan in goods trade with China during the same period, an increase of 19.9 percent year on year. China&#39;s trade with the United States stood at 609.71 billion yuan during this period, down 16.9 percent year on year, the data revealed. The GAC data also showed that trade with countries participating in the Belt and Road Initiative had reached 4.02 trillion yuan during the first two months of 2026, with year-on-year growth of 20 percent.</div>
+        
+        <div class="news-actions"><a href="https://english.www.gov.cn/archive/statistics/202603/10/content_WS69afb2c2c6d00ca5f9a09c60.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">3.</span><a href="https://think.ing.com/snaps/chinas-trade-growth-starts-2026-strong-with-biggest-gain-in-four-years-a/" target="_blank">China&#39;s trade growth starts 2026 strong with biggest gain in four years</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">think.ing.com</span></div>
+        <div class="news-snippet"># Chinaâs trade growth starts 2026 strong with biggest gain in four years. China&#39;s trade growth handily beat forecasts at the start of the year. As exports boom, trading partners will be encouraged by strong import growth as China aims to balance out trade. | 21.8% YoY | China&#39;s export growth in the first two months of 2026 |. ### China&#39;s export growth in the first two months of 2026. By export product, China&#39;s key exports from last year continued to see the strongest growth at the start of 2026. Encouragingly for China&#39;s trade partners, imports are also off to a strong start in the first two months of the year, up 19.8% YoY, year-to-date, well above market forecasts for import growth of around 7%. The first instinct is that, following a record-breaking year for China&#39;s exports despite rising global protectionism, the torrid pace of trade growth from the first two months of the year isnât likely to persist throughout 2026.</div>
+        
+        <div class="news-actions"><a href="https://think.ing.com/snaps/chinas-trade-growth-starts-2026-strong-with-biggest-gain-in-four-years-a/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">4.</span><a href="https://io-en-us.group/" target="_blank">China-US Trade Relations 2026 | Global Commerce Insights</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">io-en-us.group</span></div>
+        <div class="news-snippet">US agricultural exports to China have stabilized at pre-trade war levels. New agreements facilitate trade in genetically modified crops and organic products.</div>
+        
+        <div class="news-actions"><a href="https://io-en-us.group/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">5.</span><a href="https://www.china-briefing.com/news/us-china-relations-in-2026-what-to-watch/" target="_blank">US-China Relations in 2026: What to Watch</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">china-briefing.com</span></div>
+        <div class="news-snippet">While the detente holds, underlying political, regulatory, and security tensions continue to threaten US-China relations in 2026.</div>
+        
+        <div class="news-actions"><a href="https://www.china-briefing.com/news/us-china-relations-in-2026-what-to-watch/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">6.</span><a href="https://finance.yahoo.com/quote/CNYUSD%3DX/history/" target="_blank">cny/usd (cnyusd=x) - Yahoo Finance</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">finance.yahoo.com</span></div>
+        <div class="news-snippet">CNY/USD (CNYUSD=X) ; Apr 8, 2026, 0.1458, 0.1464 ; Apr 7, 2026, 0.1453, 0.1458 ; Apr 6, 2026, 0.1453, 0.1453 ; Apr 3, 2026, 0.1452, 0.1452</div>
+        
+        <div class="news-actions"><a href="https://finance.yahoo.com/quote/CNYUSD%3DX/history/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">7.</span><a href="https://www.exchangerates.org.uk/currency-forecasts/us-dollar-to-yuan-forecast" target="_blank">Dollar to Yuan Forecast 2026: USD/CNY Expected to Reach 6.8699</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">exchangerates.org.uk</span></div>
+        <div class="news-snippet"># Dollar to Yuan Forecast 2026: USD/CNY Expected to Reach 6.8699. **Dollar to Yuan exchange rate outlook summary:** USD/CNY looks broadly steady â 6.9496 early 2026, then 6.8919 late 2026, by 6.8355 early 2027. In one month the DollarâYuan exchange rate is forecast to be at **6.9491**, using a time-adjusted path to projected quarter-end levels. We forecast the Dollar-to-Yuan rate to reach 6.9496 by March 2026, 6.9084 by June 2026 and 6.8919 by September 2026. Goldman Sachs US Dollar to Yuan Forecast: Stronger Policy Backing to Drive USD/CNY Lower. Goldman Sachs US Dollar to Yuan Forecast: Stronger Policy Backing to Drive USD/CNY Lower. The US Dollar to Chinese Yuan exchange rate has continued to edge lower, with USD/CNY slipping... Rabobank Chinese Yuan Forecast: A Weaker or Stronger USD/CNY Exchange Rate? Rabobank Chinese Yuan Forecast: A Weaker or Stronger USD/CNY Exchange Rate? Dollar to Yuan Rate Outlook: &quot;USD/CNY to Reach 7.0 by Q3 2023&quot; say MUFG. Foreign exchange analysts at MUFG forecast the US Dollar to Yuan (USD/CNY) exchange rate to...</div>
+        
+        <div class="news-actions"><a href="https://www.exchangerates.org.uk/currency-forecasts/us-dollar-to-yuan-forecast" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">8.</span><a href="https://www.facebook.com/trans.infoGLOBAL/posts/container-shipping-started-2026-strong-then-geopolitics-clouded-the-outlookmore-/1538022051664781/" target="_blank">Container shipping started 2026 strong. Then geopolitics clouded ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">facebook.com</span></div>
+        <div class="news-snippet">Freight rates have declined due to vessel oversupply, and industry profits are projected to fall by over 80% in 2025, dropping below $10 billion</div>
+        
+        <div class="news-actions"><a href="https://www.facebook.com/trans.infoGLOBAL/posts/container-shipping-started-2026-strong-then-geopolitics-clouded-the-outlookmore-/1538022051664781/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">9.</span><a href="https://docshipper.com/logistics/2026-freight-rate-forecast-why-shipping-prices-are-dropping-and-how-to-pivot/" target="_blank">2026 Freight Rate Forecast: Why Shipping Prices Are Dropping ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">docshipper.com</span></div>
+        <div class="news-snippet">In early 2022, ocean freight rates shattered every record â container prices soared past **$20,000 per FEU** on **Trans-Pacific** routes, as port congestion, container shortages, and post-COVID demand surge collided into a perfect storm. Spot rate vs long-term contract rate comparison 2025-2026 â when spot rates fall below contracted rates, shippers save by shifting to the spot market. By gradually migrating 60% of its volumes to the spot market (while keeping 40% on contract for planning stability), the company saves an average of **$1,100/FEU** â equivalent to over **â¬180,000/year** on 165 containers annually. Freight rates can shift by 10â20% within a single week â tracking the right indices every month ensures you never miss a window to book cheaper or renegotiate your existing rates before the market moves against you. Beyond the immediate rate cycle,Â three structural shifts are permanently reshaping global shippingÂ â from the rise of green maritime corridors and port automation to the radical redrawing of supply chain geographies.</div>
+        
+        <div class="news-actions"><a href="https://docshipper.com/logistics/2026-freight-rate-forecast-why-shipping-prices-are-dropping-and-how-to-pivot/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div>
+        <div class="history-section">
+            <h2>📅 历史日报目录</h2>
+            <ul class="history-list">
+                <li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-14.html" target="_blank">2026-04-14</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-13.html" target="_blank">2026-04-13</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-11.html" target="_blank">2026-04-11</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-10.html" target="_blank">2026-04-10</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        外贸新闻播报 · <a href="https://github.com/wigginZhang/foreign-trade-news">GitHub</a>
+    </div>
+</body>
+</html>

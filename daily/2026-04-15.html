@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月15日 周二 外贸新闻播报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --color-bg: #F4F3EE; --color-bg-secondary: #EDEBE6; --color-bg-tertiary: #E8E6E1;
+    --color-accent: #C15F3C; --color-accent-hover: #A84E30;
+    --color-text-primary: #2C2825; --color-text-secondary: #6B6560; --color-text-tertiary: #9A9590;
+    --color-separator: #DDDBD6; --color-white: #FFFFFF;
+    --color-high-impact: #C15F3C; --color-medium-impact: #B8860B; --color-low-impact: #9A9590;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 20px; --space-xl: 32px;
+    --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 100px;
+    --shadow-card: 0 2px 8px rgba(44,40,37,0.06); --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+header { background: var(--color-bg); border-bottom: 1px solid var(--color-separator); padding: 0 var(--space-lg); height: 60px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.header-title { font-family: var(--font-serif); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.header-link { font-size: 14px; color: var(--color-accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.header-link:hover { color: var(--color-accent-hover); }
+.container { max-width: 800px; margin: 0 auto; padding: var(--space-xl); }
+.day-header { text-align: center; margin-bottom: var(--space-xl); }
+.day-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-sm); }
+.day-subtitle { font-size: 15px; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+.nav-buttons { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); flex-wrap: wrap; }
+.nav-btn { background: var(--color-white); border: 1px solid var(--color-separator); border-radius: var(--radius-full); padding: 8px 20px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+.nav-btn:hover { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); transform: translateY(-2px); }
+.stats-bar { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.stat { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-lg); flex: 1; text-align: center; box-shadow: var(--shadow-card); }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--color-accent); letter-spacing: -0.02em; line-height: 1.1; }
+.stat-label { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-top: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.section { background: var(--color-white); border-radius: var(--radius-lg); margin-bottom: var(--space-md); box-shadow: var(--shadow-card); overflow: hidden; }
+.section-header { padding: 14px var(--space-lg); background: var(--color-bg-secondary); display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-family: var(--font-serif); font-size: 14px; font-weight: 600; }
+.section-title .icon { margin-right: var(--space-sm); }
+.section-count { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); background: var(--color-separator); padding: 4px 10px; border-radius: var(--radius-sm); }
+.news-item { padding: var(--space-lg); border-bottom: 1px solid var(--color-separator); }
+.news-item:last-child { border-bottom: none; }
+.news-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); display: flex; gap: 8px; line-height: 1.4; }
+.news-num { color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+.news-title a { color: var(--color-text-primary); text-decoration: none; }
+.news-title a:hover { color: var(--color-accent); }
+.news-meta { display: flex; gap: var(--space-sm); margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); flex-wrap: wrap; align-items: center; }
+.impact-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+.impact-tag.high { background: rgba(193,95,60,0.12); color: var(--color-high-impact); }
+.impact-tag.medium { background: rgba(184,134,11,0.12); color: var(--color-medium-impact); }
+.impact-tag.low { background: rgba(154,149,144,0.12); color: var(--color-low-impact); }
+.news-source { color: var(--color-text-tertiary); }
+.news-snippet { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 14px; }
+.key-facts { background: var(--color-bg); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 12px 14px; margin-bottom: 14px; }
+.key-facts-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+.key-facts ul { list-style: none; padding: 0; margin: 0; }
+.key-facts li { font-size: 13px; color: var(--color-text-primary); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+.key-facts li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+.news-actions { text-align: right; }
+.read-more { font-size: 13px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.read-more:hover { color: var(--color-accent-hover); }
+.footer { text-align: center; font-size: 13px; color: var(--color-text-tertiary); padding: var(--space-xl); margin-top: var(--space-xl); border-top: 1px solid var(--color-separator); }
+.footer a { color: var(--color-accent); }
+.history-section { background: var(--color-white); border-radius: var(--radius-lg); margin-top: var(--space-xl); padding: 25px; box-shadow: var(--shadow-card); }
+.history-section h2 { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--color-text-primary); border-bottom: 1px solid var(--color-separator); padding-bottom: 12px; margin-bottom: 16px; }
+.history-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.history-list li { margin: 0; }
+.history-list a { display: inline-block; padding: 6px 14px; background: var(--color-bg); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; }
+.history-list a:hover { background: var(--color-accent); color: var(--color-white); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🐾 外贸新闻播报</div>
+        <a href="../index.html" class="header-link">← 返回首页</a>
+    </header>
+    <div class="container">
+        <div class="day-header">
+            <h1 class="day-title">4月15日 周二</h1>
+            <p class="day-subtitle">2026-04-15 · 09:20 生成 · 8 条新闻 · 5 个分类</p>
+            <div class="nav-buttons"><a href="2026-04-15.html" class="nav-btn">← 4月15日周二</a><a href="../index.html" class="nav-btn">📅 返回目录</a><a href="2026-04-15.html" class="nav-btn">4月15日周二 →</a></div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-value">8</div><div class="stat-label">新闻总数</div></div>
+            <div class="stat"><div class="stat-value">5</div><div class="stat-label">内容分类</div></div>
+            <div class="stat"><div class="stat-value">3</div><div class="stat-label">高影响</div></div>
+        </div>
+        <div class="section"><div class="section-header"><div class="section-title"><span class="icon">📦</span>关税与贸易政策</div><div class="section-count">1 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://uvozizkine.com/en/blog/china-to-remove-export-rebates-in-2026-what-importers-need-to-know" target="_blank">China to remove export rebates in 2026, What importers need to know</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">uvozizkine.com</span></div>
+        <div class="news-snippet">Starting April 2026, China will eliminate export rebates for hundreds of products. &gt; Notice No. 2/2026 â Amendments to Export Tax Rebate Policies for Photovoltaic and Battery Products. Cancellation of Export VAT Rebates for Photovoltaic Products**. &gt; Starting from **April 1, 2026**, export VAT rebates for photovoltaic and other related products will be cancelled. Reduction and Cancellation of Export VAT Rebates for Battery Products**. &gt; * From **January 1, 2027**, export VAT rebates for battery products will be **fully cancelled**. Not sure how the end of Chinaâs export VAT rebates will affect your products? :   The export rebate, a VAT refund for exported goods, is being eliminated for hundreds of products categorized by HS codes in the official annex. If you import goods from China and are unsure whether your products are affected by this change, we can check your HS codes, suppliers, and assess the potential impact on pricing.</div>
+        
+        <div class="news-actions"><a href="https://uvozizkine.com/en/blog/china-to-remove-export-rebates-in-2026-what-importers-need-to-know" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">📊</span>数据快递</div><div class="section-count">1 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://en.people.cn/n3/2026/0414/c90000-20446392.html" target="_blank">China&#39;s foreign trade goes off to a strong start in 2026, as Q1 trade ...</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">en.people.cn</span></div>
+        <div class="news-snippet">China&#39;s foreign trade has regained momentum in the first three months of this year, with foreign trade in goods jumping by 15 percent to reach 11.84 trillion yuan ($1.73 trillion), latest data from the General Administration of Customs (GAC) showed on Tuesday. It marks the first time that China&#39;s first-quarter foreign trade has exceeded 11 trillion yuan, while the quarterly growth rate also hit a five-year high. &quot;China&#39;s foreign trade has gone off to a very strong start this year,&quot; Wang Jun, deputy head of GAC, said at a press briefing held by the State Council Information Office on Tuesday. Li Changan, a professor at the Academy of China Open Economy Studies at the University of International Business and Economics, told the Global Times on Tuesday that the acceleration in import growth is the result of China&#39;s implementation of a balanced foreign trade policy. * China&#39;s foreign trade records strong start to 2026 with double-digit growth.</div>
+        
+        <div class="news-actions"><a href="https://en.people.cn/n3/2026/0414/c90000-20446392.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🌏</span>地缘动态</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.td.com/content/dam/tdgis/document/us/en/pdf/insights/thought-leadership/us-china-trade-war.pdf" target="_blank">[PDF] The U.S.-China Trade War: What to Expect in 2026 - TD Bank</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">td.com</span></div>
+        <div class="news-snippet">The U.S.-China Trade War: What to Expect in 2026 | 4 Figure 1: Americaâs trade deficit is over $1 tn, a massive and unsustainable imbalance Sleight of hand: Chinaâs key victory last month was forcefully shifting the focus of negotiations from catastrophic structural imbalances to narrower, bureaucratic issues like port fees and rare earth export controls Source: Bloomberg Finance L.P. demonstrating Chinaâs confident ascendance and Americaâs shallow bluster. â Deng Xiaoping, 1992 The U.S.-China Trade War: What to Expect in 2026 | 6 Figure 3: Tariff (%) required to balance bilateral trade The USTR estimates a tariff of 68% is required to balance trade with China (reflecting enormous structural impediments), roughly 2x that for Mexico and 5x that for Canada Source: Bloomberg Finance L.P., U.S. Trade Representative (USTR) Figure 4: CNY is 35% cheap relative to the USD, reflecting Beijingâs massive intervention Source: International Monetary Fund, World Bank, Bloomberg Finance L.P. Note: The table presents an average of five different valuation measures, including REER (real effective exchange rate) and PPP (purchasing power parity) Such policies would constitute an enormous shock to China (and the global economy more broadly) and would be extremely destabilizing.</div>
+        
+        <div class="news-actions"><a href="https://www.td.com/content/dam/tdgis/document/us/en/pdf/insights/thought-leadership/us-china-trade-war.pdf" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/" target="_blank">US-China Tariff 2026: Trade War Pressures Rise</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">frontieraffairs.com</span></div>
+        <div class="news-snippet">[Skip to content](https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/#main). # US-China Trade Clash 2026: New Tariff Threats Shake Global Markets. **US-China tariff 2026**The White House stated that the tariffs are a response to what it describes as âunfair trade practicesâ by China, including state subsidies that allow Chinese manufacturers to undercut global competitors on price. ## US-China Trade War 2026: What the 145% Tariff Shock Means for Global Markets. The White House stated that the tariffs are a response to what it describes as âunfair trade practicesâ by China, including state subsidies that allow Chinese manufacturers to undercut global competitors on price. ![Image 6: Global stock markets fall in reaction to US China tariff escalation in April 2026](blob:http://localhost/dc98d60c1aa9f98b8fc189bd3b6f9be3). ![Image 8: Global stock markets fall in reaction to US China tariff escalation in April 2026](blob:http://localhost/dc98d60c1aa9f98b8fc189bd3b6f9be3). ![Image 10: Global stock markets fall in reaction to US China tariff escalation in April 2026](blob:http://localhost/dc98d60c1aa9f98b8fc189bd3b6f9be3). [![Image 12: Israel Lebanon conflict 2026](blob:http://localhost/e93b59ac1fd412f204d8da5e0dce2b3a)](https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/). ### [US-China tariff 2026](https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/). [Read More â](https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/). [![Image 14: Israel Lebanon conflict 2026](blob:http://localhost/e93b59ac1fd412f204d8da5e0dce2b3a)](https://frontieraffairs.com/uk-political-crisis-2026-prime-minister-pressure/).</div>
+        
+        <div class="news-actions"><a href="https://frontieraffairs.com/us-china-tariff-2026-145-percent-global-markets/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">💱</span>汇率风云</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.exchange-rates.org/exchange-rate-history/cny-usd-2026" target="_blank">CNY to USD Exchange Rate History for 2026</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">exchange-rates.org</span></div>
+        <div class="news-snippet">The CNY/USD rate is up +1.77% in 2026. This means the Chinese Yuan Renminbi increased in value compared to the US Dollar.</div>
+        
+        <div class="news-actions"><a href="https://www.exchange-rates.org/exchange-rate-history/cny-usd-2026" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="http://www.x-rates.com/average/?from=CNY&amp;to=USD&amp;amount=1&amp;year=2026" target="_blank">Exchange Rate Average (Chinese Yuan Renminbi, US Dollar)</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">x-rates.com</span></div>
+        <div class="news-snippet"># Monthly Average Converter US Dollar per 1 Chinese Yuan Renminbi Monthly average. * Jan 0.143384 â 31 days. * Feb 0.144643 â 28 days. * Mar 0.145079 â 31 days. * Apr 0.145259 â 13 days. * View CNY / USD Currency Calculator. ## Change Monthly Average base currency. #### Percent Change in the Last 24 Hours. Apr 11, 2026 17:36 UTC. ## Useful Links.</div>
+        
+        <div class="news-actions"><a href="http://www.x-rates.com/average/?from=CNY&amp;to=USD&amp;amount=1&amp;year=2026" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🚢</span>物流纵览</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.yqn.com/intro/blog/post/fcl_shipping_rates_from_china" target="_blank">FCL Shipping Rates from China [2026 April Updated] - YQN</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">yqn.com</span></div>
+        <div class="news-snippet"># **FCL Shipping Rates from China [2026 April Updated]**. Tracking FCLshipping rates from china is vital for your supply chain planning. **YQN Logistics** provides this concise breakdown to help you navigate the latest rate fluctuations across major global trade lanes. FCL shipping rates from China to European base ports fell 6.2% to $1,547/TEU. | Shanghai | Antwerp | From $1400 | Check Rates |. FCL shipping rates from China to the US West Coast (USWC) jumped 8.2% to $2,552/FEU. Check our FCL shipping rates from China to USA. Container shipping rates for West Coast South America (WCSA) and Mexico are loosening. Find some best FCL shipping rates from China to Latin America. FCL shipping rates from China to the Persian Gulf jumped 4.8% this week, reaching a premium of $4,167/TEU. ### YQN Logistics offers affordable container shipping rates from China to Middle East. Navigating volatile **fcl shipping rates from china** requires absolute visibility. Visit our platform to check your live FCL shipping rates from China.</div>
+        
+        <div class="news-actions"><a href="https://www.yqn.com/intro/blog/post/fcl_shipping_rates_from_china" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://www.facebook.com/groups/577984106139176/posts/1980555852548654/" target="_blank">China shipping update for March 2026</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">facebook.com</span></div>
+        <div class="news-snippet">Effective June 1st, Shanghai will be fully lifting restrictions on it&#39;s port. This will mean about 260,000 containers will be enroute to the</div>
+        
+        <div class="news-actions"><a href="https://www.facebook.com/groups/577984106139176/posts/1980555852548654/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div>
+        <div class="history-section">
+            <h2>📅 历史日报目录</h2>
+            <ul class="history-list">
+                <li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-15.html" target="_blank">2026-04-15</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-14.html" target="_blank">2026-04-14</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-13.html" target="_blank">2026-04-13</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-11.html" target="_blank">2026-04-11</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-10.html" target="_blank">2026-04-10</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        外贸新闻播报 · <a href="https://github.com/wigginZhang/foreign-trade-news">GitHub</a>
+    </div>
+</body>
+</html>

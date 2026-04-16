@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月13日 周日 外贸新闻播报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --color-bg: #F4F3EE; --color-bg-secondary: #EDEBE6; --color-bg-tertiary: #E8E6E1;
+    --color-accent: #C15F3C; --color-accent-hover: #A84E30;
+    --color-text-primary: #2C2825; --color-text-secondary: #6B6560; --color-text-tertiary: #9A9590;
+    --color-separator: #DDDBD6; --color-white: #FFFFFF;
+    --color-high-impact: #C15F3C; --color-medium-impact: #B8860B; --color-low-impact: #9A9590;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 20px; --space-xl: 32px;
+    --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 100px;
+    --shadow-card: 0 2px 8px rgba(44,40,37,0.06); --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+header { background: var(--color-bg); border-bottom: 1px solid var(--color-separator); padding: 0 var(--space-lg); height: 60px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.header-title { font-family: var(--font-serif); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.header-link { font-size: 14px; color: var(--color-accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.header-link:hover { color: var(--color-accent-hover); }
+.container { max-width: 800px; margin: 0 auto; padding: var(--space-xl); }
+.day-header { text-align: center; margin-bottom: var(--space-xl); }
+.day-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-sm); }
+.day-subtitle { font-size: 15px; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+.nav-buttons { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); flex-wrap: wrap; }
+.nav-btn { background: var(--color-white); border: 1px solid var(--color-separator); border-radius: var(--radius-full); padding: 8px 20px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+.nav-btn:hover { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); transform: translateY(-2px); }
+.stats-bar { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.stat { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-lg); flex: 1; text-align: center; box-shadow: var(--shadow-card); }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--color-accent); letter-spacing: -0.02em; line-height: 1.1; }
+.stat-label { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-top: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.section { background: var(--color-white); border-radius: var(--radius-lg); margin-bottom: var(--space-md); box-shadow: var(--shadow-card); overflow: hidden; }
+.section-header { padding: 14px var(--space-lg); background: var(--color-bg-secondary); display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-family: var(--font-serif); font-size: 14px; font-weight: 600; }
+.section-title .icon { margin-right: var(--space-sm); }
+.section-count { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); background: var(--color-separator); padding: 4px 10px; border-radius: var(--radius-sm); }
+.news-item { padding: var(--space-lg); border-bottom: 1px solid var(--color-separator); }
+.news-item:last-child { border-bottom: none; }
+.news-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); display: flex; gap: 8px; line-height: 1.4; }
+.news-num { color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+.news-title a { color: var(--color-text-primary); text-decoration: none; }
+.news-title a:hover { color: var(--color-accent); }
+.news-meta { display: flex; gap: var(--space-sm); margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); flex-wrap: wrap; align-items: center; }
+.impact-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+.impact-tag.high { background: rgba(193,95,60,0.12); color: var(--color-high-impact); }
+.impact-tag.medium { background: rgba(184,134,11,0.12); color: var(--color-medium-impact); }
+.impact-tag.low { background: rgba(154,149,144,0.12); color: var(--color-low-impact); }
+.news-source { color: var(--color-text-tertiary); }
+.news-snippet { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 14px; }
+.key-facts { background: var(--color-bg); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 12px 14px; margin-bottom: 14px; }
+.key-facts-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+.key-facts ul { list-style: none; padding: 0; margin: 0; }
+.key-facts li { font-size: 13px; color: var(--color-text-primary); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+.key-facts li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+.news-actions { text-align: right; }
+.read-more { font-size: 13px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.read-more:hover { color: var(--color-accent-hover); }
+.footer { text-align: center; font-size: 13px; color: var(--color-text-tertiary); padding: var(--space-xl); margin-top: var(--space-xl); border-top: 1px solid var(--color-separator); }
+.footer a { color: var(--color-accent); }
+.history-section { background: var(--color-white); border-radius: var(--radius-lg); margin-top: var(--space-xl); padding: 25px; box-shadow: var(--shadow-card); }
+.history-section h2 { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--color-text-primary); border-bottom: 1px solid var(--color-separator); padding-bottom: 12px; margin-bottom: 16px; }
+.history-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.history-list li { margin: 0; }
+.history-list a { display: inline-block; padding: 6px 14px; background: var(--color-bg); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; }
+.history-list a:hover { background: var(--color-accent); color: var(--color-white); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🐾 外贸新闻播报</div>
+        <a href="../index.html" class="header-link">← 返回首页</a>
+    </header>
+    <div class="container">
+        <div class="day-header">
+            <h1 class="day-title">4月13日 周日</h1>
+            <p class="day-subtitle">2026-04-13 · 16:21 生成 · 9 条新闻 · 5 个分类</p>
+            <div class="nav-buttons"><a href="2026-04-13.html" class="nav-btn">← 4月13日周日</a><a href="../index.html" class="nav-btn">📅 返回目录</a><a href="2026-04-13.html" class="nav-btn">4月13日周日 →</a></div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-value">9</div><div class="stat-label">新闻总数</div></div>
+            <div class="stat"><div class="stat-value">5</div><div class="stat-label">内容分类</div></div>
+            <div class="stat"><div class="stat-value">1</div><div class="stat-label">高影响</div></div>
+        </div>
+        <div class="section"><div class="section-header"><div class="section-title"><span class="icon">📦</span>关税与贸易政策</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.mightyshipping.com/en/blog/2026-02-26-china-cancels-export-tax-rebates-271-products" target="_blank">China&#39;s April 2026 Export VAT Rebate Cuts Are Now in Force</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">mightyshipping.com</span></div>
+        <div class="news-snippet"># China Cancels Export VAT Rebates on 271 Products from April 2026. ## 249 Products Lose Rebates Overnight, 22 Battery Items Phased Out â the Export Window Is Closing Fast. **Summary:** Effective April 1, 2026, China will cancel VAT export rebates on 249 product categories spanning chemicals, solar cells, ceramics, glass, stone, and building materials. Separately, 22 battery product categories will see their rebate rate cut from 9% to 6% on the same date, then reduced to zero from January 1, 2027. These are critical raw materials for power and energy storage batteries, and the rebate cancellation will directly raise export costs across the entire lithium battery supply chain. * **Building ceramics:** ceramic tiles, floor tiles, mosaics (69072110â69074090) â China is the world&#39;s largest ceramic tile exporter; the rebate cancellation will significantly affect major production hubs such as Foshan, Chaozhou, and Zibo. * **Plan for the battery phase-out:** Battery exporters need a two-phase costing model â 6% rebate from April to December 2026, then zero from 2027.</div>
+        
+        <div class="news-actions"><a href="https://www.mightyshipping.com/en/blog/2026-02-26-china-cancels-export-tax-rebates-271-products" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://www.sekologistics.com/en/resource-hub/news/china-export-tax-rebate-changes-2026-complete-supply-chain-planning-guide-for-importers-and-exporters/" target="_blank">China Export Tax Rebate Changes 2026: Complete Supply Chain ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">sekologistics.com</span></div>
+        <div class="news-snippet">Effective April 1, 2026, China will eliminate or reduce VAT export rebates for PV products, batteries, glass, and chemicals. Prepare your supply chain for</div>
+        
+        <div class="news-actions"><a href="https://www.sekologistics.com/en/resource-hub/news/china-export-tax-rebate-changes-2026-complete-supply-chain-planning-guide-for-importers-and-exporters/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">📊</span>数据快递</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="http://english.customs.gov.cn/statics/report/preliminary.html" target="_blank">Preliminary Release - China Customs</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">english.customs.gov.cn</span></div>
+        <div class="news-snippet">Statistics. Due to data verification after the preliminary release, the monthly bulletin is of more accuracy. Year. 2026, 2025, 2024, 2023, 2022, 2021, 2020</div>
+        
+        <div class="news-actions"><a href="http://english.customs.gov.cn/statics/report/preliminary.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://www.census.gov/foreign-trade/balance/c5700.html" target="_blank">Trade in Goods with China Available years: 2026 | 2025 | 2024 | 2023</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">census.gov</span></div>
+        <div class="news-snippet">[](https://www.census.gov/foreign-trade/balance/c5700.html). [end of header](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [Skip to looking for section](https://www.census.gov/foreign-trade/balance/c5700.html#skipsideNav). *   [Main](https://www.census.gov/foreign-trade/index.html). *   [About](https://www.census.gov/foreign-trade/about/index.html). *   [Data](https://www.census.gov/foreign-trade/data/index.html). *   [Export Filing AES](https://www.census.gov/foreign-trade/aes/index.html). *   [Regulations](https://www.census.gov/foreign-trade/regulations/index.html). *   [Outreach](https://www.census.gov/foreign-trade/outreach/index.html). *   [Schedule B](https://www.census.gov/foreign-trade/schedules/b/index.html). *   [Reference](https://www.census.gov/foreign-trade/reference/). *   [Guide to International Trade](https://www.census.gov/foreign-trade/guide/index.html). *   [Events](https://www.census.gov/foreign-trade/aes/upcoming-outreach-activities.html). *   [Release Schedule](https://www.census.gov/foreign-trade/schedule.html). *   [Definitions](https://www.census.gov/foreign-trade/reference/definitions/index.html). *   [Contact Us](https://www.census.gov/foreign-trade/contact.html). *   [Main](https://www.census.gov/foreign-trade/index.html). *   [About](https://www.census.gov/foreign-trade/about/index.html). *   [Data](https://www.census.gov/foreign-trade/data/index.html). *   [Export Filing AES](https://www.census.gov/foreign-trade/aes/index.html). *   [Regulations](https://www.census.gov/foreign-trade/regulations/index.html). *   [Outreach](https://www.census.gov/foreign-trade/outreach/index.html). *   [Schedule B](https://www.census.gov/foreign-trade/schedules/b/index.html). *   [Reference](https://www.census.gov/foreign-trade/reference/). *   [Guide to International Trade](https://www.census.gov/foreign-trade/guide/index.html). *   [Events](https://www.census.gov/foreign-trade/aes/upcoming-outreach-activities.html). *   [Release Schedule](https://www.census.gov/foreign-trade/schedule.html). *   [Definitions](https://www.census.gov/foreign-trade/reference/definitions/index.html). *   [Contact Us](https://www.census.gov/foreign-trade/contact.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). *   [Notes](https://www.census.gov/foreign-trade/balance/c5700.html#questions). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). DOWNLOAD: [Download the full dataset for all countries[EXCEL - 5 MB]](https://www.census.gov/foreign-trade/balance/c5700.html). [](https://www.census.gov/foreign-trade/balance/c5700.html). ## [](https://www.census.gov/foreign-trade/balance/c5700.html)Additional Information. *   For information on data sources and methodology, check out the [Information on the Collection and Publication of Trade Statistics](https://www.census.gov/foreign-trade/balance/c5700.html).</div>
+        
+        <div class="news-actions"><a href="https://www.census.gov/foreign-trade/balance/c5700.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🌏</span>地缘动态</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://news.cgtn.com/news/2026-02-24/China-urges-U-S-to-halt-further-unilateral-tariff-measures-1L1DZbPOnEQ/p.html" target="_blank">China opposes all forms of unilateral tariff measures - CGTN</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">news.cgtn.com</span></div>
+        <div class="news-snippet">China has consistently opposed all forms of unilateral tariff measures and urged the United States to revoke its existing unilateral tariffs</div>
+        
+        <div class="news-actions"><a href="https://news.cgtn.com/news/2026-02-24/China-urges-U-S-to-halt-further-unilateral-tariff-measures-1L1DZbPOnEQ/p.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://english.mofcom.gov.cn/News/SpokesmansRemarks/art/2026/art_0b3b19498a844cd0bdb4ca0deb281a9d.html" target="_blank">MOFCOM Spokesperson&#39;s Remarks on Recent U.S. Tariff Adjustment</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">english.mofcom.gov.cn</span></div>
+        <div class="news-snippet">China has consistently opposed all forms of unilateral tariff measures. It urges the U.S. to remove such unilateral tariffs and refrain from new ones. It</div>
+        
+        <div class="news-actions"><a href="https://english.mofcom.gov.cn/News/SpokesmansRemarks/art/2026/art_0b3b19498a844cd0bdb4ca0deb281a9d.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">💱</span>汇率风云</div><div class="section-count">1 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.reuters.com/business/finance/yuan-expected-rise-2026-beijing-has-its-reasons-saying-not-so-fast-2026-02-03/" target="_blank">Yuan expected to rise in 2026, but Beijing has its reasons ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">reuters.com</span></div>
+        <div class="news-snippet">Booming exports are pushing up China&#39;s currency and while analysts think authorities will resist further gains, risks are to the upside and</div>
+        
+        <div class="news-actions"><a href="https://www.reuters.com/business/finance/yuan-expected-rise-2026-beijing-has-its-reasons-saying-not-so-fast-2026-02-03/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🚢</span>物流纵览</div><div class="section-count">2 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.hellenicshippingnews.com/containers-quarterly-asia-europe-enters-2026-with-seasonal-firmness-structural-uncertainty/" target="_blank">Asia-Europe enters 2026 with seasonal firmness, structural ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">hellenicshippingnews.com</span></div>
+        <div class="news-snippet">As of Jan. 9, Platts Container Rate 1 (PCR1) and PCR11 â North Asia to North Europe and the UK â were assessed at $2,700/FEU, extending gains</div>
+        
+        <div class="news-actions"><a href="https://www.hellenicshippingnews.com/containers-quarterly-asia-europe-enters-2026-with-seasonal-firmness-structural-uncertainty/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://phaata.com/en/logistics-market/international-shipping-and-logistics-market-update-week-12-2026-phaata-62090.html" target="_blank">International Shipping and Logistics Market Update Week ...</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">phaata.com</span></div>
+        <div class="news-snippet">Ocean Freight rates from North Europe to Asia in Week 12/2026 continued to increase by 6.80% week-on-week, up to $157/FEU. This rate is up 12.14</div>
+        
+        <div class="news-actions"><a href="https://phaata.com/en/logistics-market/international-shipping-and-logistics-market-update-week-12-2026-phaata-62090.html" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div>
+        <div class="history-section">
+            <h2>📅 历史日报目录</h2>
+            <ul class="history-list">
+                <li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-13.html" target="_blank">2026-04-13</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-11.html" target="_blank">2026-04-11</a></li><li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-10.html" target="_blank">2026-04-10</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        外贸新闻播报 · <a href="https://github.com/wigginZhang/foreign-trade-news">GitHub</a>
+    </div>
+</body>
+</html>

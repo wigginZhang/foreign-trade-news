@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月10日 周四 外贸新闻播报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --color-bg: #F4F3EE; --color-bg-secondary: #EDEBE6; --color-bg-tertiary: #E8E6E1;
+    --color-accent: #C15F3C; --color-accent-hover: #A84E30;
+    --color-text-primary: #2C2825; --color-text-secondary: #6B6560; --color-text-tertiary: #9A9590;
+    --color-separator: #DDDBD6; --color-white: #FFFFFF;
+    --color-high-impact: #C15F3C; --color-medium-impact: #B8860B; --color-low-impact: #9A9590;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 20px; --space-xl: 32px;
+    --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 100px;
+    --shadow-card: 0 2px 8px rgba(44,40,37,0.06); --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+header { background: var(--color-bg); border-bottom: 1px solid var(--color-separator); padding: 0 var(--space-lg); height: 60px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.header-title { font-family: var(--font-serif); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.header-link { font-size: 14px; color: var(--color-accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.header-link:hover { color: var(--color-accent-hover); }
+.container { max-width: 800px; margin: 0 auto; padding: var(--space-xl); }
+.day-header { text-align: center; margin-bottom: var(--space-xl); }
+.day-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-sm); }
+.day-subtitle { font-size: 15px; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+.nav-buttons { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); flex-wrap: wrap; }
+.nav-btn { background: var(--color-white); border: 1px solid var(--color-separator); border-radius: var(--radius-full); padding: 8px 20px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+.nav-btn:hover { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); transform: translateY(-2px); }
+.stats-bar { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.stat { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-lg); flex: 1; text-align: center; box-shadow: var(--shadow-card); }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--color-accent); letter-spacing: -0.02em; line-height: 1.1; }
+.stat-label { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-top: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.section { background: var(--color-white); border-radius: var(--radius-lg); margin-bottom: var(--space-md); box-shadow: var(--shadow-card); overflow: hidden; }
+.section-header { padding: 14px var(--space-lg); background: var(--color-bg-secondary); display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-family: var(--font-serif); font-size: 14px; font-weight: 600; }
+.section-title .icon { margin-right: var(--space-sm); }
+.section-count { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); background: var(--color-separator); padding: 4px 10px; border-radius: var(--radius-sm); }
+.news-item { padding: var(--space-lg); border-bottom: 1px solid var(--color-separator); }
+.news-item:last-child { border-bottom: none; }
+.news-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); display: flex; gap: 8px; line-height: 1.4; }
+.news-num { color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+.news-title a { color: var(--color-text-primary); text-decoration: none; }
+.news-title a:hover { color: var(--color-accent); }
+.news-meta { display: flex; gap: var(--space-sm); margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); flex-wrap: wrap; align-items: center; }
+.impact-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+.impact-tag.high { background: rgba(193,95,60,0.12); color: var(--color-high-impact); }
+.impact-tag.medium { background: rgba(184,134,11,0.12); color: var(--color-medium-impact); }
+.impact-tag.low { background: rgba(154,149,144,0.12); color: var(--color-low-impact); }
+.news-source { color: var(--color-text-tertiary); }
+.news-snippet { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 14px; }
+.key-facts { background: var(--color-bg); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 12px 14px; margin-bottom: 14px; }
+.key-facts-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+.key-facts ul { list-style: none; padding: 0; margin: 0; }
+.key-facts li { font-size: 13px; color: var(--color-text-primary); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+.key-facts li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+.news-actions { text-align: right; }
+.read-more { font-size: 13px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.read-more:hover { color: var(--color-accent-hover); }
+.footer { text-align: center; font-size: 13px; color: var(--color-text-tertiary); padding: var(--space-xl); margin-top: var(--space-xl); border-top: 1px solid var(--color-separator); }
+.footer a { color: var(--color-accent); }
+.history-section { background: var(--color-white); border-radius: var(--radius-lg); margin-top: var(--space-xl); padding: 25px; box-shadow: var(--shadow-card); }
+.history-section h2 { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--color-text-primary); border-bottom: 1px solid var(--color-separator); padding-bottom: 12px; margin-bottom: 16px; }
+.history-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.history-list li { margin: 0; }
+.history-list a { display: inline-block; padding: 6px 14px; background: var(--color-bg); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; }
+.history-list a:hover { background: var(--color-accent); color: var(--color-white); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🐾 外贸新闻播报</div>
+        <a href="../index.html" class="header-link">← 返回首页</a>
+    </header>
+    <div class="container">
+        <div class="day-header">
+            <h1 class="day-title">4月10日 周四</h1>
+            <p class="day-subtitle">2026-04-10 · 09:20 生成 · 14 条新闻 · 5 个分类</p>
+            <div class="nav-buttons"><a href="../index.html" class="nav-btn">📅 返回目录</a><a href="2026-04-10.html" class="nav-btn">4月10日周四 →</a></div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-value">14</div><div class="stat-label">新闻总数</div></div>
+            <div class="stat"><div class="stat-value">5</div><div class="stat-label">内容分类</div></div>
+            <div class="stat"><div class="stat-value">8</div><div class="stat-label">高影响</div></div>
+        </div>
+        <div class="section"><div class="section-header"><div class="section-title"><span class="icon">📦</span>关税与贸易政策</div><div class="section-count">5 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.mof.gov.cn/zhengwuxinxi/zhengcejiedu/index.htm" target="_blank">248项商品出口退税取消，蓄电池退税率分两步清除</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">财政部/税务总局</span></div>
+        <div class="news-snippet">自2026年4月1日起，取消光伏、锂矿等248项产品出口退税。蓄电池分两步：2026年4月从13%降至6%，2027年4月彻底取消。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>涉及光伏组件关键材料、锂矿制品等</li><li>光伏企业将直接承压，成本优势急速减弱</li><li>蓄电池出口目前仍保持13%高增</li><li>建议尽快核算FOB成本</li></ul></div>
+        <div class="news-actions"><a href="https://www.mof.gov.cn/zhengwuxinxi/zhengcejiedu/index.htm" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://www.whitehouse.gov/" target="_blank">特朗普签署药品100%关税</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">白宫/贸易代表办公室</span></div>
+        <div class="news-snippet">4月7日，特朗普依据第232条，对进口药品及药品成分加征100%关税。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>台湾地区医药产业首当其冲</li><li>美国最高法院已判定&quot;对等关税&quot;违法</li><li>中国原料药出口企业关注转口贸易风险</li><li>100%税率累加成本，竞争力大降</li></ul></div>
+        <div class="news-actions"><a href="https://www.whitehouse.gov/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">3.</span><a href="https://www.commerce.gov/" target="_blank">美国调整钢铁铝关税：维持50%，简化稀土产品报审</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">特朗普政府</span></div>
+        <div class="news-snippet">维持对钢铁铝进口征收50%关税不变，但对稀土产品降低税率并简化审批流程。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>12项&quot;对等关税&quot;已被最高法院判定违法</li><li>下游钢铁制品成本压力略有缓解</li><li>建议查明HS编码，准确区分产品关税归属</li></ul></div>
+        <div class="news-actions"><a href="https://www.commerce.gov/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">4.</span><a href="https://www.mofcom.gov.cn/" target="_blank">中国对非洲全面免除关税，2026年4月1日起</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">商务部</span></div>
+        <div class="news-snippet">自2026年4月1日起，对所有非洲建交国全面实施零关税。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>非洲制造业能力有限，短期冲击有限</li><li>值得关注：农产品、矿产品进口成本大降</li></ul></div>
+        <div class="news-actions"><a href="https://www.mofcom.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">5.</span><a href="https://www.mofcom.gov.cn/" target="_blank">中国16项稳外贸措施集中落地</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">商务部/海关总署</span></div>
+        <div class="news-snippet">4月，商务部出台16项稳外贸措施，从通关便利、税务优惠、金融支持、创新驱动四方面释放政策红利。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>通关效率进一步提升</li><li>&quot;合规&quot;是今年外贸出口的生命线</li></ul></div>
+        <div class="news-actions"><a href="https://www.mofcom.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">📊</span>数据快递</div><div class="section-count">3 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.customs.gov.cn/" target="_blank">货物贸易开红：出口同比+21.8%，近超2100亿美元</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">海关总署</span></div>
+        <div class="news-snippet">2026年1-2月，中国出口额同比增长21.8%，进口增长9.8%，贸易顺差超2100亿美元，创近三年同期历史新高。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>远超市场预期，背后是产业结构变化</li><li>芯片、蓄电池、船舶出口大增</li><li>建议对客讲好中国制造业升级故事</li></ul></div>
+        <div class="news-actions"><a href="https://www.customs.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://www.customs.gov.cn/" target="_blank">蓄电池出口142亿美元，同比+46%</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">行业协会</span></div>
+        <div class="news-snippet">2026年1-2月蓄电池出口额142亿美元，同比增长46%，仍为第三大类出口商品。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>多元市场布局成效显著</li><li>尽管面临退税率下调，高增速显示市场尚有空间</li></ul></div>
+        <div class="news-actions"><a href="https://www.customs.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">3.</span><a href="https://www.mofcom.gov.cn/" target="_blank">服务贸易逆差缩小865亿美元</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">商务部</span></div>
+        <div class="news-snippet">2026年1-2月服务进出口11430.7亿美元，同比增长3.9%；服务贸易逆差2581亿美元，较上年同期缩小865.2亿美元。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>逆差缩小反映服务出口逐步增长</li><li>知识产权使用费、电信计算机服务出口增速值得关注</li></ul></div>
+        <div class="news-actions"><a href="https://www.mofcom.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🌏</span>地缘动态</div><div class="section-count">4 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.mofcom.gov.cn/" target="_blank">中美贸易谈判持续中，第四轮磋商完成</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">商务部/WTO</span></div>
+        <div class="news-snippet">3月，中美经贸代表完成了第四轮谈判。4月底WTO部长级会议期间，双方进行深入交流。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>中美谈判呈现&quot;谈归谈、打归打&quot;的双轨特征</li><li>科技封锁持续是定向因素</li></ul></div>
+        <div class="news-actions"><a href="https://www.mofcom.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">2.</span><a href="https://ustr.gov/" target="_blank">美国启动半导体301调查，16个经济体受影响</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">美国贸易代表办公室</span></div>
+        <div class="news-snippet">USTR依据&quot;1974年贸易法&quot;第301条，对中国、台湾地区、欧盟等16个经济体启动专项调查。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>半导体供应链风险加大</li><li>中国大陆半导体出口企业面临高关税风险</li></ul></div>
+        <div class="news-actions"><a href="https://ustr.gov/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">3.</span><a href="https://www.reuters.com/" target="_blank">中东局势升温，航运几近中断</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">国际媒体</span></div>
+        <div class="news-snippet">2月18日美以对胡塞武装发动军事打击以来，中东局势持续升级。全球能源供应再次紧张。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>曼德海峡控制全球绔0%石油运输</li><li>石油运费暴涨，运力大幅上涨</li><li>中东航线货物需密切关注运费和船期延长</li></ul></div>
+        <div class="news-actions"><a href="https://www.reuters.com/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div><div class="news-item">
+        <div class="news-title"><span class="news-num">4.</span><a href="https://ec.europa.eu/" target="_blank">各国对华贸易战升级：欧盟97.3%反\u7a0b税</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">欧盟/美国/印尼政府</span></div>
+        <div class="news-snippet">欧盟对中国\u7c89\u9178反\u7a0b税最高97.3%；美国对预\u7f34件征\u7a0b税进行一次反\u91cd审；印尼对\u7c89\u9178产品实施豁免。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>欧盟高税率已基本掏空\u7c89\u9178直接出口渠道</li><li>美国反\u91cd重审若延期，现有税率继续维持5年</li><li>印尼关税豁免提供短期窗口</li></ul></div>
+        <div class="news-actions"><a href="https://ec.europa.eu/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">💱</span>汇率风云</div><div class="section-count">1 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.pbc.gov.cn/" target="_blank">人民币汇率快速走弱，\u4e2d\u7f8e\u6c2e6.8680</a></div>
+        <div class="news-meta"><span class="impact-tag high">高影响</span><span class="news-source">中国人民银行</span></div>
+        <div class="news-snippet">4月9日，人民币对美元中间价至6.8680，即期收盘报6.8274，大幅上扬。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>对出口企业：美元计价商品换算人民币后收入缩水</li><li>对进口企业：采购成本改善</li><li>建议：出口订单锁定汇率窗口期</li></ul></div>
+        <div class="news-actions"><a href="https://www.pbc.gov.cn/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div><div class="section"><div class="section-header"><div class="section-title"><span class="icon">🚢</span>物流纵览</div><div class="section-count">1 条</div></div><div><div class="news-item">
+        <div class="news-title"><span class="news-num">1.</span><a href="https://www.reuters.com/" target="_blank">巴基斯坦港口费用下调30%+</a></div>
+        <div class="news-meta"><span class="impact-tag medium">中影响</span><span class="news-source">巴基斯坦政府</span></div>
+        <div class="news-snippet">4月9日，巴基斯坦政府宣布：未来几周内整体港口费用降低30%以上。</div>
+        <div class="key-facts"><div class="key-facts-title">关键事实</div><ul><li>中国商品出口巴基斯坦及中东通道成本将下降</li><li>中东市场整体经商环境改善值得关注</li></ul></div>
+        <div class="news-actions"><a href="https://www.reuters.com/" target="_blank" class="read-more">阅读原文 →</a></div>
+    </div></div></div>
+        <div class="history-section">
+            <h2>📅 历史日报目录</h2>
+            <ul class="history-list">
+                <li><a href="https://wigginzhang.github.io/foreign-trade-news/daily/2026-04-10.html" target="_blank">2026-04-10</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        外贸新闻播报 · <a href="https://github.com/wigginZhang/foreign-trade-news">GitHub</a>
+    </div>
+</body>
+</html>
