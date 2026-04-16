@@ -837,7 +837,7 @@
                 el.innerHTML = '<li><span style="font-size:13px;color:var(--color-text-tertiary)">渲染失败</span></li>';
             }
         }
-        loadHistory();
+        document.addEventListener('DOMContentLoaded', loadHistory);
     </script>
 
     <!-- History Archive -->
