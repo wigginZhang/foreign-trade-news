@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月16日 周三 外贸新闻播报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #F4F3EE; --color-bg-secondary: #EDEBE6; --color-bg-tertiary: #E8E6E1;
+            --color-accent: #C15F3C; --color-accent-hover: #A84E30;
+            --color-text-primary: #2C2825; --color-text-secondary: #6B6560; --color-text-tertiary: #9A9590;
+            --color-separator: #DDDBD6; --color-white: #FFFFFF;
+            --color-high-impact: #C15F3C; --color-medium-impact: #B8860B; --color-low-impact: #9A9590;
+            --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+            --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 20px; --space-xl: 32px;
+            --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 100px;
+            --shadow-card: 0 2px 8px rgba(44,40,37,0.06); --shadow-elevated: 0 4px 16px rgba(44,40,37,0.10);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        header { background: var(--color-bg); border-bottom: 1px solid var(--color-separator); padding: 0 var(--space-lg); height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .header-title { font-family: var(--font-serif); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+        .header-link { font-size: 14px; color: var(--color-accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+        .header-link:hover { color: var(--color-accent-hover); }
+        .container { max-width: 800px; margin: 0 auto; padding: var(--space-xl); }
+        .day-header { text-align: center; margin-bottom: var(--space-xl); }
+        .day-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--color-text-primary); margin-bottom: var(--space-sm); }
+        .day-subtitle { font-size: 15px; color: var(--color-text-secondary); }
+        .nav-buttons { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); flex-wrap: wrap; }
+        .nav-btn { background: var(--color-white); border: 1px solid var(--color-separator); border-radius: var(--radius-full); padding: 8px 20px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; }
+        .nav-btn:hover { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); transform: translateY(-2px); }
+        .stats-bar { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); }
+        .stat { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-lg); flex: 1; text-align: center; box-shadow: var(--shadow-card); }
+        .stat-value { font-size: 28px; font-weight: 700; color: var(--color-accent); letter-spacing: -0.02em; line-height: 1.1; }
+        .stat-label { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-top: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+        .section { background: var(--color-white); border-radius: var(--radius-lg); margin-bottom: var(--space-md); box-shadow: var(--shadow-card); overflow: hidden; }
+        .section-header { padding: 14px var(--space-lg); background: var(--color-bg-secondary); display: flex; justify-content: space-between; align-items: center; }
+        .section-title { font-family: var(--font-serif); font-size: 14px; font-weight: 600; }
+        .section-title .icon { margin-right: var(--space-sm); }
+        .section-count { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); background: var(--color-separator); padding: 4px 10px; border-radius: var(--radius-sm); }
+        .news-item { padding: var(--space-lg); border-bottom: 1px solid var(--color-separator); }
+        .news-item:last-child { border-bottom: none; }
+        .news-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin-bottom: var(--space-sm); display: flex; gap: 8px; line-height: 1.4; }
+        .news-num { color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+        .news-title a { color: var(--color-text-primary); text-decoration: none; }
+        .news-title a:hover { color: var(--color-accent); }
+        .news-meta { display: flex; gap: var(--space-sm); margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); flex-wrap: wrap; align-items: center; }
+        .impact-tag { padding: 3px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+        .impact-tag.high { background: rgba(193,95,60,0.12); color: var(--color-high-impact); }
+        .impact-tag.medium { background: rgba(184,134,11,0.12); color: var(--color-medium-impact); }
+        .impact-tag.low { background: rgba(154,149,144,0.12); color: var(--color-low-impact); }
+        .news-source { color: var(--color-text-tertiary); }
+        .news-snippet { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; margin-bottom: 14px; }
+        .key-facts { background: var(--color-bg); border-left: 3px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 12px 14px; margin-bottom: 14px; }
+        .key-facts-title { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+        .key-facts ul { list-style: none; padding: 0; margin: 0; }
+        .key-facts li { font-size: 13px; color: var(--color-text-primary); padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
+        .key-facts li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+        .news-actions { text-align: right; }
+        .read-more { font-size: 13px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+        .read-more:hover { color: var(--color-accent-hover); }
+        .footer { text-align: center; font-size: 13px; color: var(--color-text-tertiary); padding: var(--space-xl); margin-top: var(--space-xl); border-top: 1px solid var(--color-separator); }
+        .footer a { color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🐾 外贸新闻播报</div>
+        <a href="../index.html" class="header-link">← 返回首页</a>
+    </header>
+    
+    <div class="container">
+        <div class="day-header">
+            <h1 class="day-title">4月16日 周三</h1>
+            <p class="day-subtitle">外贸新闻日报 · 0 条新闻 · 0 个分类</p>
+            <div class="nav-buttons"><a href="2026-04-15.html" class="nav-btn">← 4月15日</a><a href="../history.html" class="nav-btn">📅 历史目录</a></div>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">0</div>
+                <div class="stat-label">新闻总数</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">0</div>
+                <div class="stat-label">内容分类</div>
+            </div>
+        </div>
+        
+        
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="icon">📊</span>数据快递
+                </div>
+                <div class="section-count">2 条</div>
+            </div>
+            <div class="section-content">
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">1.</span>
+                        <a href="https://www.globaltimes.cn/page/202604/1358871.shtml" target="_blank">一季度外贸开门红！进出口同比增长15%，首破11万亿</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag high">高影响</span>
+                        <span class="news-source">Global Times / 新华英文</span>
+                    </div>
+                    <div class="news-snippet">2026年一季度中国外贸总值11.84万亿元，同比+15%，增速创五年同期新高，一带一路贸易额占51.2%。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>一季度外贸总值11.84万亿元，同比+15%</li><li>季度增速创五年同期最高</li><li>一带一路贸易额6.06万亿，占总外贸51.2%，同比+14.2%</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://www.globaltimes.cn/page/202604/1358871.shtml" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">2.</span>
+                        <a href="https://english.news.cn/20260414/f5b3a3dd8ae247ddb5b56c791dd253b8/c.html" target="_blank">一季度外贸数据持续亮眼（新华社确认）</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag medium">中影响</span>
+                        <span class="news-source">Xinhua English</span>
+                    </div>
+                    <div class="news-snippet">新华社同步确认一季度外贸增长15%，与海关总署数据一致，双源印证。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>新华社确认一季度外贸+15%</li><li>数据与海关总署口径一致</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://english.news.cn/20260414/f5b3a3dd8ae247ddb5b56c791dd253b8/c.html" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="icon">🌏</span>地缘动态
+                </div>
+                <div class="section-count">1 条</div>
+            </div>
+            <div class="section-content">
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">1.</span>
+                        <a href="https://www.nylim.com/assets/documents/perspectives/2026-epoch-outlook.pdf" target="_blank">中美贸易战2026年展望：技术层面谈判为主</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag medium">中影响</span>
+                        <span class="news-source">NYLIM PDF报告</span>
+                    </div>
+                    <div class="news-snippet">2026年习近平和特朗普预计会面2-3次，谈判聚焦窄范围技术议题，达成全面协议的难度较大。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>预计全年元首会面2-3次</li><li>谈判重点为技术性窄项议题</li><li>全面协议前景不明朗</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://www.nylim.com/assets/documents/perspectives/2026-epoch-outlook.pdf" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="icon">💱</span>汇率风云
+                </div>
+                <div class="section-count">2 条</div>
+            </div>
+            <div class="section-content">
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">1.</span>
+                        <a href="https://www.scmp.com/economy/china-economy/article/3339358/chinas-yuan-strengthen-685-us-dollar-first-quarter-2026-morgan-stanley" target="_blank">摩根士丹利：人民币一季度升至6.85，后趋稳</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag high">高影响</span>
+                        <span class="news-source">SCMP / 南华早报</span>
+                    </div>
+                    <div class="news-snippet">摩根士丹利大幅上调人民币预期，一季度目标6.85（自7.05上调），年末约7.0。离岸人民币近期已突破7.0，为15个月最强。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>摩根士丹利新预期：一季度6.85（大幅上调自7.05）</li><li>年末预测约7.0</li><li>离岸人民币已升至7.0128，为2024年9月以来最高</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://www.scmp.com/economy/china-economy/article/3339358/chinas-yuan-strengthen-685-us-dollar-first-quarter-2026-morgan-stanley" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">2.</span>
+                        <a href="https://www.exchangerates.org.uk/currency-forecasts/yuan-to-us-dollar-forecast" target="_blank">机构预测：2026年末人民币看向0.1455美元</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag medium">中影响</span>
+                        <span class="news-source">exchangerates.org.uk</span>
+                    </div>
+                    <div class="news-snippet">2026年中约0.14480美元，年底0.14550美元，2027年中约0.14620美元，人民币整体稳中有升。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>2026年中预期：CNY/USD约0.14480</li><li>2026年末预期：约0.14550（升值）</li><li>2027年中预期：约0.14620</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://www.exchangerates.org.uk/currency-forecasts/yuan-to-us-dollar-forecast" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="icon">🚢</span>物流纵览
+                </div>
+                <div class="section-count">2 条</div>
+            </div>
+            <div class="section-content">
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">1.</span>
+                        <a href="https://www.globaltrademag.com/global-container-freight-index-sees-minor-decline-in-late-february-2026/" target="_blank">全球集装箱运费小幅回落至$2,445，红海局势仍存不确定性</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag medium">中影响</span>
+                        <span class="news-source">Global Trade Magazine</span>
+                    </div>
+                    <div class="news-snippet">受需求疲软和红海危机持续影响，全球集装箱运费指数下跌约4%至$2,445/FEU。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>运费指数下跌4%至$2,445/40HQ</li><li>主因：全球需求疲软</li><li>红海局势不确定性持续影响运价</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://www.globaltrademag.com/global-container-freight-index-sees-minor-decline-in-late-february-2026/" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">
+                        <span class="news-num">2.</span>
+                        <a href="https://kchtrans.com/april-2026-monthly-freight-market-update-2/" target="_blank">4月货运市场趋紧，运费上行周期启动</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="impact-tag medium">中影响</span>
+                        <span class="news-source">KCH Transportation月报</span>
+                    </div>
+                    <div class="news-snippet">4月货运市场出现拐点，运价与合同价趋近持平，卡车运输成本三周内上涨21-24美分/英里。</div>
+                    
+                <div class="key-facts">
+                    <div class="key-facts-title">关键事实</div>
+                    <ul><li>货运市场进入上周期，运费获支撑</li><li>合同价与现货价趋于持平</li><li>燃油成本三周内上涨21-24美分/英里</li></ul>
+                </div>
+
+                    <div class="news-actions">
+                        <a href="https://kchtrans.com/april-2026-monthly-freight-market-update-2/" target="_blank" class="read-more">阅读原文 →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+        外贸新闻播报 · <a href="../history.html">历史日报目录</a> · <a href="https://github.com/wigginZhang/foreign-trade-news">GitHub</a>
+    </div>
+</body>
+</html>
