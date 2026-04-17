@@ -98,80 +98,106 @@ def esc(text):
     return h(text)
 
 def load_json(path):
-    """Load JSON, handling broadcast field encoding issues."""
+    """Load JSON, handling problematic characters that break parsing."""
     with open(path, 'r', encoding='utf-8', errors='replace') as f:
         raw = f.read()
     
-    # Fix common JSON issues from encoding problems
-    # Replace literal \n sequences (not escaped) inside strings with \n
-    # This is a heuristic: find patterns like "text\nmore" and escape them
-    
-    # Try standard JSON parse first
+    # Standard parse first
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
         pass
     
-    # Try to fix unescaped newlines in string values
-    # Pattern: find "field": "...\n..." where \n is literal backslash-n
-    # We do this by finding the sections array and parsing just that
+    # Fallback: try to extract and fix the sections portion
     try:
-        # Extract just the sections portion
         m = re.search(r'"sections":\s*\[', raw)
-        if m:
-            start = m.start()
-            rest = raw[start + len('"sections": '):]
+        if not m:
+            raise ValueError('Cannot find sections in ' + path)
+        
+        start = m.end() - 1  # include the [
+        rest = raw[start:]
+        
+        # Find matching closing bracket
+        depth = 0
+        end = 0
+        for i, c in enumerate(rest):
+            if c == '[': depth += 1
+            elif c == ']': 
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        
+        if end == 0:
+            raise ValueError('Cannot find closing bracket for sections')
+        
+        sections_text = rest[:end]
+        
+        # Process the sections text char by char, escaping problematic sequences
+        result_chars = []
+        in_string = False
+        i = 0
+        while i < len(sections_text):
+            c = sections_text[i]
             
-            # Find the closing bracket
-            depth = 0
-            end = 0
-            for i, c in enumerate(rest):
-                if c == '[': depth += 1
-                elif c == ']': 
-                    depth -= 1
-                    if depth == 0:
-                        end = i + 1
-                        break
+            if not in_string:
+                if c == '"':
+                    in_string = True
+                    result_chars.append(c)
+                else:
+                    result_chars.append(c)
+                i += 1
+                continue
             
-            sections_text = rest[:end]
-            
-            # Now parse just the sections
-            sections_json = '[' + sections_text + ']'
-            
-            # Replace literal \n with escaped \\n within string values
-            # This regex finds string values and fixes unescaped newlines
-            def fix_string_newlines(m):
-                s = m.group(0)
-                # s is like "field": "value"
-                # Fix literal \n inside the value
-                s = re.sub(r'(?<!\\)\\n', '\\\\n', s)
-                s = re.sub(r'(?<!\\)\\r', '\\\\r', s)
-                return s
-            
-            # We need to be more careful. The issue is \n (backslash + n) inside strings
-            # Let's try a simpler fix: just escape all \n in the sections text
-            fixed = sections_text.replace('\\n', '\\\\n').replace('\\r', '\\\\r')
-            sections_json = '[' + fixed + ']'
-            
-            sections = json.loads(sections_json)
-            
-            # Also extract dateShort and generatedAt
-            date_match = re.search(r'"dateShort":\s*"([^"]+)"', raw)
-            time_match = re.search(r'"generatedAt":\s*"([^"]+)"', raw)
-            stats_match = re.search(r'"totalNews":\s*(\d+)', raw)
-            sections_count_match = re.search(r'"sections":\s*(\d+)', raw)
-            
-            return {
-                'dateShort': date_match.group(1) if date_match else 'unknown',
-                'generatedAt': time_match.group(1) if time_match else 'unknown',
-                'sections': sections,
-                'stats': {
-                    'totalNews': int(stats_match.group(1)) if stats_match else sum(len(s.get('news',[])) for s in sections),
-                    'sections': int(sections_count_match.group(1)) if sections_count_match else len(sections)
-                }
-            }
+            # We're inside a string
+            if c == '\\' and i + 1 < len(sections_text):
+                # Already escaped sequence - keep as-is
+                nc = sections_text[i + 1]
+                result_chars.append(c)
+                result_chars.append(nc)
+                i += 2
+                continue
+            elif c == '"':
+                # End of string
+                in_string = False
+                result_chars.append(c)
+                i += 1
+                continue
+            elif c == '\n':
+                result_chars.append('\\n')
+                i += 1
+                continue
+            elif c == '\r':
+                result_chars.append('\\r')
+                i += 1
+                continue
+            elif c == '\t':
+                result_chars.append('\\t')
+                i += 1
+                continue
+            elif c == '"':  # Chinese or ASCII quote inside string
+                result_chars.append('\\"')
+                i += 1
+                continue
+            else:
+                result_chars.append(c)
+                i += 1
+                continue
+        
+        fixed = ''.join(result_chars)
+        sections = json.loads(fixed)
+        
+        # Extract metadata
+        date_match = re.search(r'"dateShort":\s*"([^"]+)"', raw)
+        time_match = re.search(r'"generatedAt":\s*"([^"]+)"', raw)
+        
+        return {
+            'dateShort': date_match.group(1) if date_match else 'unknown',
+            'generatedAt': time_match.group(1) if time_match else 'unknown',
+            'sections': sections,
+        }
     except Exception as e:
-        print(f'  [WARN] Fallback parse failed: {e}')
+        print(f'  [WARN] Fallback parse failed for {path}: {e}')
     
     raise ValueError(f'Cannot parse {path}')
 
