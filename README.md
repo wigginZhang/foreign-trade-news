@@ -2,6 +2,8 @@
 
 自动采集、展示外贸新闻的静态网站。
 
+**🌐 在线预览：** https://wigginzhang.github.io/foreign-trade-news/
+
 ## 功能
 
 - 📰 自动采集每日外贸新闻（关税政策、进出口数据、汇率、物流等）
